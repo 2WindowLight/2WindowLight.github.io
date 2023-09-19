@@ -3,63 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bulletin Board</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f2f2f2;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #ffffff;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        }
-
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-
-        .post {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 5px;
-        }
-
-        .post h2 {
-            color: #333;
-        }
-
-        .post p {
-            color: #666;
-        }
-    </style>
+    <title>Code Sharing Platform</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Bulletin Board</h1>
-
-        <div class="post">
-            <h2>Post Title 1</h2>
-            <p>This is the content of the first post.</p>
-        </div>
-
-        <div class="post">
-            <h2>Post Title 2</h2>
-            <p>This is the content of the second post.</p>
-        </div>
-
-        <div class="post">
-            <h2>Post Title 3</h2>
-            <p>This is the content of the third post.</p>
-        </div>
-    </div>
+    <header>
+        <nav>
+            <div class="logo">Code Share</div>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/upload">Upload</a></li>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/signup">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="upload-section">
+            <h1>Upload Your Code</h1>
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                <div class="file-input">
+                    <label for="codeFile">Choose a file:</label>
+                    <input type="file" id="codeFile" name="codeFile" accept=".zip, .tar.gz, .tar, .rar">
+                </div>
+                <div class="description">
+                    <label for="description">Description (optional):</label>
+                    <textarea id="description" name="description" rows="4" cols="50"></textarea>
+                </div>
+                <button type="submit">Upload</button>
+            </form>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2023 Code Share. All rights reserved.</p>
+    </footer>
 </body>
+</html>
