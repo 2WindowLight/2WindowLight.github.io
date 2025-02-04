@@ -12,7 +12,7 @@ tags: [Network]
 
 ---
 
-## Stateless dhcpv6 설정
+## Stateless dhcpv6 설정 
 
 ![image-20250204110103091](/Users/changhee/2WindowLight.github.io/_posts/images/2025-02-04-test/image-20250204110103091.png)
 
