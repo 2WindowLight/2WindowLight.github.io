@@ -1,0 +1,482 @@
+---
+title: <h0>Test Network Ip routing</h0>
+author: cotes   
+categories: [cisco virtual cloud]
+tags: [Network]
+
+
+
+
+
+
+
+---
+
+# Test Network Ip Routing
+
+------
+
+## R1
+
+```bash
+int lo 0 # 루프백 지정
+ip address 1.1.1.1 255.255.255.0
+exit
+int e0/0
+ip add 1.1.12.1 255.255.255.0
+no sh
+exit
+
+```
+
+## R2
+
+```bash
+int lo 0
+ip add 1.1.2.2 255.255.255.0
+
+int e0/0
+ip add 1.1.12.2 255.255.255.0
+no sh
+
+int e0/1
+ip add 1.1.23.2 255.255.255.0
+no sh
+exit
+```
+
+## R3
+
+```bash
+int lo 0
+ip add 1.1.3.3 255.255.255.0
+
+int e0/1
+ip add 1.1.23.3 255.255.255.0
+no sh
+
+int e0/0
+ip add 1.1.34.3 255.255.255.0
+no sh
+exit
+```
+
+## R4
+
+```bash
+int lo 0
+ip add 1.1.4.4 255.255.255.0
+int e0/0
+ip add 1.1.34.4 255.255.255.0
+no sh
+exit
+```
+
+**라우팅 프로토콜 - 모든 라우터에서 동일하게 설정**
+
+```bash
+router eigrp 1
+net 0.0.0.0
+```
+
+
+
+
+
+------
+
+### AS (RIP, EIFRP, OSPF, BGP, IS-IS)
+
+IGP: RIP, EIGRP, IS-IS, OSPF
+
+EGP:BGP
+
+------
+
+## **알고리즘**
+
+- distance vector: **RIP** 
+- link state: **OSPF, IS-IS**
+- advanced distance vector: **EIGRP, BGP
+
+------
+
+##  자동 축약 (CCNP 시험)
+
+주 네트웤 경계에서는 주 네트웤만 광고한다.
+
+주 네트워크란 서브넷팅을 하지 않았을 때의 네트워크를 의미
+
+주 네트워크 경계는 라우팅 정보에 포함된 네트워크의 주 네트워크와 라우티 ㅇ정보가 전송되는 인터페이스의 주 네트워크가 다른 지점
+
+
+
+------
+
+## 링크 상태 라우팅 프로토콜 46p
+
+링크 상태 라우팅 프로토콜은 추가적으로 특정 네트워크가 접속되어 있는 라우터 정보(ID), 그 라우터와  인접한 라우터 정보 등을 광고한다.
+
+링크 상태 라우팅 ...- OSPF
+
+------
+
+## 클래스리스 라우팅 프로토콜 47p
+
+광고(전송)시 서브넷 마스크 정보도 포함시킨다. (요즘 사용되는 모든 라우팅 프로토콜이 여기에 포함된다.)
+
+------
+
+## IGP와 EGP 48
+
+동일 조직에 의한 라우팅 정책이 적용되는 네트워크를 하나의 AS 이라고 한다. 
+
+동일 AS 내부에서 사용되는 라우팅 프로토콜을 **IGP**, 서로 다른 AS 간에 사용되는 라우팅 프로토콜을 **BGP**
+
+------
+
+## 경로 결정 방법과 라우팅 테이블 49P
+
+다수개의 라우팅 프로토콜이 설정된 라우터에서 특정 목적지로 가는 경로는 다음과 같은 기준과 절차에 의해 결정된다.
+
+1) 동일 라우팅 프로토콜 내에서 특정 목적지로 가는 **경로가 다수개 있을 때 메트릭**이 가장 낮은 것을 선택
+1) 다수개의 라우팅 프로토콜이 동일한 네트워크 정보를 광고할 때는 **AD 값이 낮은 라우팅 프로토콜**이 계산한 경로가 라우팅 테이블에 설치된다.
+1) 일단 라우팅 테이블에 저장된 다음에는 패킷 전송시 패킷의 목적지 주소와 라우팅 테이블에 있는 네트워크 주소의 서브넷 마스크 길이가 가장 길게 일치되는 경로를 선택한다. **이것을 Longest match rule 이라고 한다.**
+
+
+
+------
+
+### 매트릭
+
+라우팅 프로토콜들이 최적 경로를 선택하는 기준을 메트릭(Metric) 이라고 한다.
+
+### metric : 경로 결정 기준 
+
+| 라우팅 프로토콜 |            메트릭             |
+| :-------------: | :---------------------------: |
+|       RIP       |           홉 카운트           |
+|      EIGRP      | 속도, 지연, 신뢰도, 부하, MTU |
+|      OFPF       |         코스트 (속도)         |
+|       BGP       |        속성(attribute)        |
+
+
+
+------
+
+## 라우팅 프로토콜간의 우선 순위
+
+|  라우팅 프로토콜에 따른 경로의 종류  |  AD  |
+| :----------------------------------: | :--: |
+|         직접 접속된 네트워크         |  0   |
+|  로컬 인터페이스를 사용한 정적 경로  |  0   |
+| 넥스트 홉 IP 주소를 사용한 정적 경로 |  1   |
+|   EIGRP 축약 경로 (summary route)    |  5   |
+|               외부 BGP               |  20  |
+|              내부 EIGRP              |  90  |
+|                 OSPF                 | 110  |
+|                IS-IS                 | 115  |
+|                 RIP                  | 120  |
+|              외부 EIGRP              | 170  |
+|               내부 BGP               | 200  |
+
+AD 값이 낮은 라우팅 프로토콜이 계산한 경로가 라우팅 테이블에 설치된다.
+
+
+
+------
+
+
+
+
+
+![IMG_0386](/Users/changhee/2WindowLight.github.io/_posts/images/2025-02-05-Test Network Ip Routing /IMG_0386.png)
+
+1.  라우팅 테이블에 저장된 네트워크의 종류를 표시하는 코드이다.
+2.  디폴트 게이트웨이(default gateway)가 설정되지 않았음을 표시한다
+
+3. 1.0.0.0  네트워크가 서브넷명 되어 있으며, 서브넷의 수량은 6개이고, 1치 마스크 길이 있다. 이치점 서브넷팅 된 네트워크를 가지고 있는 메이저 네트워크(TOSIO DESOR) 푸드(aie Tout)라고 하고, 서브넷팅 된 네트워크를 차일드 루트(chld Fou) 라고 다
+
+10008은 페이린트 루트이고, 111.024, 111132, 1.1 2 0124 등은 차일드 루트 이다.
+
+4.  C (connected)는 현재의 라우터에 직접 접속되어 있는 네트워크를 나타낸다.
+
+5.  'T'(local)은 현재의 라우터 인터페이스에 설정된 주소를 나타낸다.
+
+6. 목적지 네트워크를 광고받은 라우팅 프로토콜을 표시한다. 즉, 1.1.1.024 네트워크는 BIG통하여 광고 받았음을 의미한다.
+
+7.  목적지 네트워크를 의미한다.
+
+8. 목적지 네트워크의 서브넷 마스크 길이를 표시한다.
+
+9.  목적지 네트워크의 AD 값을 표시한다.
+
+10. 목적지 네트워크의 메트릭 값을 표시한다.
+
+11. 목적지 네트워크로 가는 넥스트 홉 IP 주소를 표시한다.
+
+12. 목적지 네트워크에 대한 라우팅 정보를 최종적으로 수신한 후 경과한 시간을 의미한다.
+
+13. 목적지 네트워크로 가는 인터페이스를 표시한다.11 과 13의 의미는 다르지만 역할은 같다. 즉 목적지 네트워크로 가는 출구를 알려준다.
+
+14. 특정 목적지 네트워크에 대해서 출력 인터페이스(또는 넥스트 홉 IP 주소)가 두 개 이상 설정되어 있으면 해당 네트워크로 가는 경로가 여러 개 있고, 트래픽의 부하가 분산됨을 의미한다.
+
+15. 2.0.0.0/8 네트워크가 모두 /24로 서브넷팅 되어 있음을 의미한다.
+
+
+
+------
+
+라우팅 네트워크 종류
+
+멀티 캐스트  - 목적지 주소가 224.0.0.0 에서 239.255.255.255 사이의 IP 주소로 설정된 전송방식으로 해당 IP 주소를 사용하는 장비들만 이 패킷을 수신 OSPF
+
+유니캐스트 - 
+
+
+
+------
+
+브로트 캐스트 멀티 엑세스
+
+
+
+non broadcast multi access: LAN 
+
+point to point network: WAN
+
+이 두개의 구분은 데이터를 전달할때 헤더를 이더넷으로 띄우면 BMA, HDLC, PPD(WAN) 으로 씌우면 p-to-p
+
+broadcast network
+
+
+
+------
+
+## 정적 경로
+
+![111](/Users/changhee/2WindowLight.github.io/_posts/images/2025-02-05-Test Network Ip Routing /111.png)
+
+해당 네트워크는 **R1 → R2 → R3 → R4** 순서로 연결된 라우터 환경이다.
+
+R1과 R2의 **정적 경로(**ip route**) 설정이 다른 이유는, 각 라우터가 다른 네트워크를 직접 연결하고 있기 때문이다.**
+
+### R2
+
+```bash
+int e0/3
+ip address 1.1.32.2 255.255.255.0
+no sh
+```
+
+### R3
+
+```bash
+int e0/3
+ip address 1.1.32.3 255.255.255.0
+```
+
+### R1
+
+```bash
+ip route 1.1.2.0 255.255.255.0 1.1.12.2
+ip route 1.1.3.0 255.255.255.0 1.1.12.2
+ip route 1.1.4.0 255.255.255.0 1.1.12.2
+ip route 1.1.23.0 255.255.255.0 1.1.12.2
+ip route 1.1.32.0 255.255.255.0 1.1.12.2
+ip route 1.1.34.0 255.255.255.0 1.1.12.2
+```
+
+•	R1은 **R2(R1과 직접 연결됨)**를 통해 다른 네트워크로 가야 합니다.
+
+•	따라서, **모든 목적지(1.1.2.0~1.1.34.0)에 대한 경로를 R2(1.1.12.2)로 보냄**.
+
+•	1.1.12.2는 **R2의 e0/0 인터페이스 IP**.
+
+### R2
+
+```bash
+ip route 1.1.1.0 255.255.255.0 1.1.12.1
+ip route 1.1.3.0 255.255.255.0 1.1.23.3
+ip route 1.1.4.0 255.255.255.0 1.1.32.3
+ip route 1.1.34.0 255.255.255.0 1.1.23.3
+```
+
+ **과정:**
+
+​	•	ip route 1.1.1.0 255.255.255.0 1.1.12.1 → **1.1.1.0 네트워크(R1)를 가려면 1.1.12.1(R1)로 보냄**.
+
+​	•	ip route 1.1.3.0 255.255.255.0 1.1.23.3 → **1.1.3.0 네트워크(R3)를 가려면 1.1.23.3(R3)로 보냄**.
+
+​	•	ip route 1.1.4.0 255.255.255.0 1.1.32.3 → **1.1.4.0 네트워크(R4)를 가려면 1.1.32.3(R3)로 보냄**.
+
+​	•	ip route 1.1.34.0 255.255.255.0 1.1.23.3 → **1.1.34.0 네트워크(R3)를 가려면 1.1.23.3(R3)로 보냄**.
+
+
+
+**결론:**
+
+​	•	**R1은 모든 목적지에 대해 R2(1.1.12.2)로 보냄** (R2가 경로를 알아서 처리).
+
+​	•	**R2는 R1과 직접 연결된 네트워크(1.1.1.0)만 R1로 보내고, 나머지는 R3(R3를 거쳐야 하는 네트워크)로 전달**.
+
+
+
+### **추가 R3, R4)**
+
+### R3
+
+```bash
+ip route 1.1.1.0 255.255.255.0 1.1.23.2
+ip route 1.1.1.0 255.255.255.0 1.1.32.2
+ip route 1.1.2.0 255.255.255.0 1.1.23.2
+ip route 1.1.2.0 255.255.255.0 1.1.32.2
+ip route 1.1.4.0 255.255.255.0 1.1.34.4
+ip route 1.1.12.0 255.255.255.0 1.1.23.2
+ip route 1.1.12.0 255.255.255.0 1.1.32.2
+```
+
+### R4
+
+```bash
+ip route 1.1.1.0 255.255.255.0 1.1.34.3
+ip route 1.1.2.0 255.255.255.0 1.1.34.3
+ip route 1.1.3.0 255.255.255.0 1.1.34.3
+ip route 1.1.12.0 255.255.255.0 1.1.34.3
+ip route 1.1.23.0 255.255.255.0 1.1.34.3
+ip route 1.1.32.0 255.255.255.0 1.1.34.3
+```
+
+
+
+------
+
+```bash
+ip route 1.1.2.0 255.255.255.0 1.1.12.2
+1.1.2.0 # 목적지 네트워크를 지정한다.
+
+255.255.255.0 # 목적지 네트워크의 서브넷 마스크를 지정한다.
+
+1.1.12.2 # 목적지 네트워크로 가기 위한 넥스트 홈 IP 주소를 지정한다.
+# 정적 경로만을 이용하여 통신하려면 특정 라우터에 직접 접속되어 있지 않은 모든 네트워크에 대해서 정적 경로를 설정해주어야 한다.
+# 설정 후 라우팅 테이블을 확인해 보면 다음과 같이 각 목적지 네트워크로 가는 경로가 설치되어 있다.
+```
+
+
+
+------
+
+## floating static route
+
+이중 링크간의 속도가 다른 네트워크가 있으면, 이 경우 저속 회전으로 연결되는 네트워크의 AD를 고속 회전보다 더 높게 설정해주면 된다. 
+
+작은것을 라우팅 테이블로 올려서 높은 홉은 사라짐
+
+### R2
+
+```bash
+ip route 1.1.3.0 255.255.255.0 1.1.32.3 10
+```
+
+
+
+```bash
+IOU2(config)#ip route 1.1.3.0 255.255.255.0 1.1.32.3 10
+IOU2(config)#do sh ip ro static
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       a - application route
+       + - replicated route, % - next hop override
+
+Gateway of last resort is not set
+
+      1.0.0.0/8 is variably subnetted, 12 subnets, 2 masks
+S        1.1.1.0/24 [1/0] via 1.1.12.1
+S        1.1.3.0/24 [1/0] via 1.1.23.3
+S        1.1.4.0/24 [1/0] via 1.1.32.3
+S        1.1.34.0/24 [1/0] via 1.1.32.3
+                     [1/0] via 1.1.23.3
+IOU2(config)#int e0/1
+IOU2(config-if)#sh
+IOU2(config-if)#
+*Feb  5 07:01:27.876: %LINK-5-CHANGED: Interface Ethernet0/1, changed state to administratively down
+*Feb  5 07:01:28.884: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet0/1, changed state to down
+
+```
+
+
+
+```bash
+IOU2(config-if)#do sh ip ro static
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       a - application route
+       + - replicated route, % - next hop override
+
+Gateway of last resort is not set
+
+      1.0.0.0/8 is variably subnetted, 10 subnets, 2 masks
+S        1.1.1.0/24 [1/0] via 1.1.12.1
+S        1.1.3.0/24 [10/0] via 1.1.32.3
+S        1.1.4.0/24 [1/0] via 1.1.32.3
+S        1.1.34.0/24 [1/0] via 1.1.32.3
+IOU2(config-if)#no sh             
+
+```
+
+
+
+```bash
+IOU2(config-if)#do sh ip ro static
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       a - application route
+       + - replicated route, % - next hop override
+
+Gateway of last resort is not set
+
+      1.0.0.0/8 is variably subnetted, 12 subnets, 2 masks
+S        1.1.1.0/24 [1/0] via 1.1.12.1
+S        1.1.3.0/24 [1/0] via 1.1.23.3
+S        1.1.4.0/24 [1/0] via 1.1.32.3
+S        1.1.34.0/24 [1/0] via 1.1.32.3
+                     [1/0] via 1.1.23.3
+
+```
+
+
+
+------
+
+## 스위칭 방식별 부하 분산 71p
+
+부하 분산 (Load balancing) - 라우팅 테이블에 동일한 네트워크로 가는 경로가 다수 존재할 때, 이 다수의 경로를 모두 사용하는 것을 부하 분산 즉 로드 밸런싱 이라고 한다.
+
+SLB - Server Load Balancer
+
+
+
+------
+
+CEF 
+
+
+
+------
+
+## OSPF

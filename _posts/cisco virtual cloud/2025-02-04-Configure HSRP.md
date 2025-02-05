@@ -1,5 +1,5 @@
 ---
-title: <h0>2/03 configure HSRP</h0>
+title: <h0>configure HSRP</h0>
 author: cotes   
 categories: [cisco virtual cloud]
 tags: [Network]
