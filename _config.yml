@@ -14,9 +14,9 @@ timezone: Asia/Shanghai
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: dev 일기 # the main title
+title: 2WindowLight # the main title
 
-tagline: 이창희 # it will display as the subtitle
+tagline: 서버,개발 공부중.. 취업하고싶어요 # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
   A minimal, responsive and feature-rich Jekyll theme for technical writing.
@@ -97,7 +97,7 @@ theme_mode: # [light | dark]
 # e.g. 'https://cdn.com'
 
 # the avatar on sidebar, support local or CORS resources
-avatar: "/assets/img/Main_Icon.png"
+avatar: "/assets/img/Icon1.jpg"
 
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.
