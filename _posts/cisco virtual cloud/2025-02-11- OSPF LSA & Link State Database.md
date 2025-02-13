@@ -1,5 +1,5 @@
 ---
-title: <h0>OSPF Link State Database/h0>
+title: <h0>OSPF LSA & Link State Database/h0>
 author: cotes   
 categories: [cisco virtual cloud]
 tags: [Network]
@@ -63,4 +63,3 @@ OSPF는 네이버로부터 수신한 LSA를 모두 링크 상태 데이터베이
 | **NSSA ASBR**                                | NSSA 내부에서 외부 네트워크(BGP, EIGRP 등)와 연결된 라우터. Type 7 LSA를 생성하여 OSPF 내부로 외부 경로를 가져옴. | **“NSSA 내부에서 외부 경로를 OSPF로 가져오는 라우터”** |
 | **ABR (NSSA 관련)**                          | NSSA 내부의 ASBR이 생성한 Type 7 LSA를 일반 OSPF가 이해할 수 있는 Type 5 LSA로 변환하여 OSPF 전체에 전파함. | **“NSSA 외부 경로를 OSPF 전체로 퍼뜨리는 역할”**       |
 
-=

@@ -205,3 +205,16 @@ area 1 default-cost 10
 ✅ **Stub이 E2를 차단하지만 O IA(Type 3 LSA)는 차단하지 않음**
 
 ✅ **즉, 다른 OSPF 영역에서 넘어온 내부 경로(O IA)는 정상적으로 사용 가능!**
+
+------
+
+### NSSA 설정하기
+
+```bash
+R4#router ospf 1
+R4#area 45 nssa default-information-originate
+
+R5#router ospf 1
+R5#area 45 nssa
+```
+
