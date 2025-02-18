@@ -17,9 +17,9 @@ tags: [Network]
 
 
 
+![IMG_0515](/assets/cisco_post_img/2025-02-18-BGP Attribute/IMG_0515.jpeg)
+
 ![BGP Attribute](/assets/cisco_post_img/2025-02-18-BGP Attribute/BGP Attribute.png)
-
-
 
 ## 구성 조건
 
