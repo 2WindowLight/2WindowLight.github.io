@@ -19,7 +19,7 @@ tags: [Network]
 
 # 입력 경로 조정 TEST
 
-
+![TalkMedia_i_2d6b89b4a282.png](/assets/cisco_post_img/2025-02-19-BGP Input Policy/TalkMedia_i_2d6b89b4a282.png.png)
 
 **인터페이스 활성화 및 IP 주소 부여**
 
