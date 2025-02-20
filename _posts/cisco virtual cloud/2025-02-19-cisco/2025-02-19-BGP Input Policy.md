@@ -2,7 +2,7 @@
 title: <h0>BGP Input Policy</h0>
 author: cotes   
 categories: [cisco virtual cloud, 2025-02-19-cisco]
-tags: [Network]
+tags: [Network, BGP]
 
 
 
@@ -190,6 +190,9 @@ R3(config-router)#
 *Feb 19 08:36:45.997: %BGP-5-ADJCHANGE: neighbor 1.1.4.4 Up 
 R3(config-router)#exit
 ```
+
+* IBGP 라는 이름을 가진 피어 그룹 생성
+* 피어그룹 멤버들에게 적용시킬 출력정책을 설정
 
 
 

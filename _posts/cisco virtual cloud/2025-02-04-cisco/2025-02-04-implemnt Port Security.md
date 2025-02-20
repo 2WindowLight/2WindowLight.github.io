@@ -1,7 +1,7 @@
 ---
 title: <h0>Implement Port Security</h0>
 author: cotes   
-categories: [cisco virtual cloud]
+categories: [cisco virtual cloud, 2025-02-04-cisco]
 tags: [Network]
 
 

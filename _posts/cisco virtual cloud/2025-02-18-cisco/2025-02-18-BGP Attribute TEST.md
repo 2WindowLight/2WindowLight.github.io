@@ -2,7 +2,7 @@
 title: <h0>BGP Attribute TEST</h0>
 author: cotes   
 categories: [cisco virtual cloud, 2025-02-18-cisco]
-tags: [Network]
+tags: [Network, BGP]
 
 
 

@@ -1,7 +1,7 @@
 ---
 title: <h0>Test Network Ip routing</h0>
 author: cotes   
-categories: [cisco virtual cloud]
+categories: [cisco virtual cloud, 2025-02-05-cisco]
 tags: [Network]
 
 

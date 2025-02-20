@@ -2,7 +2,7 @@
 title:Attribute  Local Preference/h0>
 author: cotes   
 categories: [cisco virtual cloud, 2025-02-19-cisco]
-tags: [Network]
+tags: [Network, BGP]
 
 
 

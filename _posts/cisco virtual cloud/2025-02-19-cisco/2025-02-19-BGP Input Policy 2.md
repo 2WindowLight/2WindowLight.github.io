@@ -2,7 +2,7 @@
 title: <h0>BGP Input Policy 2</h0>
 author: cotes   
 categories: [cisco virtual cloud, 2025-02-19-cisco]
-tags: [Network]
+tags: [Network BGP]
 
 
 
