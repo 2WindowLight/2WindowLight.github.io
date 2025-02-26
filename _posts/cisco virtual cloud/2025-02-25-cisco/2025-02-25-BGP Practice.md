@@ -1,8 +1,8 @@
 ---
-title: <h0>temp</h0>
+title: <h0>BGP Practice</h0>
 author: cotes   
-categories: [cisco virtual cloud, 2025-02-24-cisco]
-tags: [Network]
+categories: [cisco virtual cloud, 2025-02-25-cisco]
+tags: [Network, BGP]
 
 
 
