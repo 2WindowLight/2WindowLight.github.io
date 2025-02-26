@@ -17,8 +17,6 @@ tags: [Network, BGP]
 
 # 로컬 프리퍼런스
 
-![IMG_0524](/assets/cisco_post_img/2024-02-19-BGP Attribute  Local Preference/IMG_0524.jpeg)
-
 **로컬 프리퍼런스는 As 외부로 가는 경로를 결정할 대 사용된다. 즉, 인접 As에서 들어오는 경로를 조정할 때 사용되는 MED와 반대로, 로컬 프리퍼런스는 인접 AS로 나가는 경로를 조정한다.**
 
 MED와는 달리 로컬 프레퍼런스는 값이 높은 것이 우선한다.

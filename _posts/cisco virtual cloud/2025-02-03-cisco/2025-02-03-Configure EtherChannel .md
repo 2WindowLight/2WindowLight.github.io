@@ -1,7 +1,7 @@
 ---
 title: <h0>2/03 Configure EtherChannel</h0>
 author: cotes   
-categories: [cisco virtual cloud]
+categories: [cisco virtual cloud,2025-02-03-cisco]
 tags: [Network]
 
 
