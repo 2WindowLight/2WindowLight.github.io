@@ -1,5 +1,5 @@
 ---
-title: <h0>vSphere and Virtualization Overview</h0>
+title: <h0>Module 2-1vSphere and Virtualization Overview</h0>
 author: cotes   
 categories: [cisco virtual cloud, 2025-02-27-cisco]
 tags: [Network, Cloud]
@@ -13,7 +13,7 @@ tags: [Network, Cloud]
 
 ---
 
-# Module 2: vSphere and Virtualization Overview
+# Module 2-1 : vSphere and Virtualization Overview
 
 ## **가상화 관련 주요 용어 정리**
 
