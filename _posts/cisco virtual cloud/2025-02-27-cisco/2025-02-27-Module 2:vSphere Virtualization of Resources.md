@@ -1,5 +1,5 @@
 ---
-title: <h0>Module 2: vSphere Virtualization of Resources/h0>
+title: <h0>Module 2: vSphere Virtualization of Resources</h0>
 author: cotes   
 categories: [cisco virtual cloud, 2025-02-27-cisco]
 tags: [Network, Cloud]
