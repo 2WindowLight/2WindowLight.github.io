@@ -12,6 +12,8 @@ tags: [Network, Cloud]
 
 
 
+
+
 ---
 
 # Managing vCenter Inventory
@@ -20,13 +22,15 @@ tags: [Network, Cloud]
 
 ## Navigating the Inventory
 
-![image-20250228172722445](/assets/cisco_post_img/2025-02-28-Module 4-3  Managing vCenter Inventory//image-20250228172722445.png)
+![image-20250228174151258](/assets/cisco_post_img/2025-02-28-Module 4-3  Managing vCenter Inventory//image-20250228174151258.png)
 
 ------
 
-## Views for Hosts, Clusters, VMs, and Templates(**vSphere Client의 호스트, 클러스터, VM 및 템플릿 인벤토리 뷰**)
+## Views for Hosts, Clusters, VMs, and Templates
 
-![image-20250228172754545](/assets/cisco_post_img/2025-02-28-Module 4-3  Managing vCenter Inventory//image-20250228172754545.png)
+![image-20250228174201774](/assets/cisco_post_img/2025-02-28-Module 4-3  Managing vCenter Inventory//image-20250228174201774.png)
+
+**vSphere Client의 호스트, 클러스터, VM 및 템플릿 인벤토리 뷰**
 
 
 
@@ -52,7 +56,7 @@ tags: [Network, Cloud]
 
 ## Views for Storage and Networks(**vSphere Client의 스토리지 및 네트워크 인벤토리 뷰**)
 
-![image-20250228172817539](/assets/cisco_post_img/2025-02-28-Module 4-3  Managing vCenter Inventory//image-20250228172817539.png)
+![image-20250228174233557](/assets/cisco_post_img/2025-02-28-Module 4-3  Managing vCenter Inventory//image-20250228174233557.png)
 
 
 
@@ -110,9 +114,11 @@ vSwitch port 종류
 
 ------
 
-Viewing Object Information
+------
 
-![image-20250228164227740](/assets/cisco_post_img/2025-02-28-Module 4-3  Managing vCenter Inventory//image-20250228164227740.png)
+## Viewing Object Information
+
+![image-20250228174328850](/assets/cisco_post_img/2025-02-28-Module 4-3  Managing vCenter Inventory//image-20250228174328850.png)
 
 vSphere Client에서 **객체(Object) 정보를 조회하는 기능**을 통해 **VM, 호스트, 네트워크, 스토리지 등의 상태를 한눈에 파악하고 관리**할 수 있다.
 
@@ -134,6 +140,10 @@ vSphere Client에서 **객체(Object) 정보를 조회하는 기능**을 통해 
 
 ​	•	Launch Remote Console 또는 Launch Web Console을 이용하여 VM에 원격으로 접근 가능
 
+
+
+------
+
 **2. 사용 사례**
 
 ​	•	VM의 **CPU, 메모리, 스토리지 사용량 확인**
@@ -150,11 +160,15 @@ vSphere Client를 활용하면 VM과 관련된 모든 객체 정보를 통합적
 
 ------
 
+------
+
 ## About Data Center Objects(**vCenter Data Center 객체 개요**)
 
-![image-20250228164433016](/assets/cisco_post_img/2025-02-28-Module 4-3  Managing vCenter Inventory//image-20250228164433016.png)
+![image-20250228174356300](/assets/cisco_post_img/2025-02-28-Module 4-3  Managing vCenter Inventory//image-20250228174356300.png)
 
 **vCenter Data Center(데이터 센터) 객체**는 **ESXi 호스트, 가상 머신(VM), 네트워크, 데이터스토어 등을 논리적으로 그룹화하는 단위**입니다. 이를 통해 기업은 다양한 가상 환경을 **체계적으로 구성하고 관리**할 수 있다.
+
+------
 
 **1. 주요 개념**
 
@@ -176,6 +190,10 @@ vSphere Client를 활용하면 VM과 관련된 모든 객체 정보를 통합적
 
 ​	•	**네트워크(Networks)** → 표준 스위치 및 분산 스위치를 통해 VM 간 통신을 관리
 
+
+
+------
+
 **2. 데이터 센터 객체의 장점**
 
 ​	**다중 데이터 센터 구성 가능**
@@ -196,9 +214,11 @@ vSphere Client를 활용하면 VM과 관련된 모든 객체 정보를 통합적
 
 ​	•	여러 데이터 센터 간 리소스 공유 및 통합 가능
 
+
+
+------
+
 **3. 사용 사례**
-
-
 
 ✅ **기업 내 글로벌 데이터 센터 관리**
 
@@ -212,21 +232,25 @@ vSphere Client를 활용하면 VM과 관련된 모든 객체 정보를 통합적
 
 → 대기업이나 클라우드 서비스 제공업체가 여러 고객의 리소스를 논리적으로 분리하여 관리
 
+
+
 **결론**
-
-
 
 **vCenter의 데이터 센터 객체**는 **ESXi 호스트, VM, 네트워크, 스토리지를 논리적으로 그룹화**하여 **효율적인 IT 운영 및 관리를 가능하게 하는 핵심 요소**이다.
 
 ------
 
+------
+
 ## Organizing Inventory Objects into Folders(**vSphere 인벤토리 객체 구성 및 폴더 관리**)
 
-![image-20250228164730355](/assets/cisco_post_img/2025-02-28-Module 4-3  Managing vCenter Inventory//image-20250228164730355.png)
+![image-20250228174433249](/assets/cisco_post_img/2025-02-28-Module 4-3  Managing vCenter Inventory//image-20250228174433249.png)
 
 **vSphere 환경에서는 데이터 센터 내의 다양한 인벤토리 객체(ESXi 호스트, VM, 네트워크, 스토리지)를 논리적으로 구성하고 관리하기 위해 폴더(Folders)를 활용할 수 있습니다.** 폴더를 사용하면 관리가 용이해지고, 규모가 큰 환경에서도 효율적인 리소스 조직이 가능합니다.
 
 
+
+------
 
 **1. 인벤토리 객체의 주요 폴더 구조**
 
@@ -258,6 +282,8 @@ vSphere는 **각 인벤토리 뷰(Inventory View)별로 고유한 폴더 구조*
 
 
 
+------
+
 **2. 인벤토리 폴더 구성의 필요성**
 
 ​	•	**관리 효율성 증가** → 많은 VM과 호스트를 체계적으로 그룹화하여 관리 용이
@@ -269,6 +295,8 @@ vSphere는 **각 인벤토리 뷰(Inventory View)별로 고유한 폴더 구조*
 ​	•	**대규모 환경 지원** → 다중 데이터 센터와 클러스터를 관리하는 대기업 및 클라우드 환경에서 필수적
 
 
+
+------
 
 **3. 인벤토리 폴더 구성 방법**
 
@@ -283,6 +311,8 @@ vSphere는 **각 인벤토리 뷰(Inventory View)별로 고유한 폴더 구조*
 📌 **5) 네트워크 및 스토리지 설정**
 
 
+
+------
 
 **4. 사용 사례**
 
@@ -310,15 +340,17 @@ vSphere는 **각 인벤토리 뷰(Inventory View)별로 고유한 폴더 구조*
 
 ------
 
+------
+
 ## Adding a Data Center and Organizational Objects to vCenter
 
-![image-20250228165104988](/assets/cisco_post_img/2025-02-28-Module 4-3  Managing vCenter Inventory//image-20250228165104988.png)
+![image-20250228174451843](/assets/cisco_post_img/2025-02-28-Module 4-3  Managing vCenter Inventory//image-20250228174451843.png)
 
 ------
 
 ## Adding ESXi Hosts to vCenter
 
-![image-20250228165801466](/assets/cisco_post_img/2025-02-28-Module 4-3  Managing vCenter Inventory//image-20250228165801466.png)
+![image-20250228174508960](/assets/cisco_post_img/2025-02-28-Module 4-3  Managing vCenter Inventory//image-20250228174508960.png)
 
 ------
 
