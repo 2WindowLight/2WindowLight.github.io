@@ -32,31 +32,20 @@ tags: [Network, Cloud]
 
 **1. 주요 개념**
 
-​	•	**VM(Guest OS)**
+* **VM(Guest OS)**
+  * **VM1, VM2, VM3** 각각의 가상 머신은 **독립적인 운영 체제(OS)와 애플리케이션(APP)를 실행**
+  * 동일한 물리적 서버에서 여러 개의 VM이 동시에 동작 가능
+  * **ESXi 하이퍼바이저(Hypervisor)**
+  * VMware **ESXi는 가상 머신을 실행하는 하이퍼바이저 역할을 수행**
+  * VM이 **CPU, 메모리, 디스크, 네트워크 등 하드웨어 리소스를 공유하도록 관리**
 
-​	•	**VM1, VM2, VM3** 각각의 가상 머신은 **독립적인 운영 체제(OS)와 애플리케이션(APP)를 실행**
-
-​	•	동일한 물리적 서버에서 여러 개의 VM이 동시에 동작 가능
-
-​	•	**ESXi 하이퍼바이저(Hypervisor)**
-
-​	•	VMware **ESXi는 가상 머신을 실행하는 하이퍼바이저 역할을 수행**
-
-​	•	VM이 **CPU, 메모리, 디스크, 네트워크 등 하드웨어 리소스를 공유하도록 관리**
-
-​	•	**호스트 자원(CPU, Memory, Disk, Network)**
-
-​	•	**CPU**: VM에 할당된 연산 능력
-
-​	•	**Memory**: 각 VM이 사용하는 RAM
-
-​	•	**Disk**: 가상 머신의 저장 공간
-
-​	•	**Network**: VM이 외부 네트워크와 통신할 수 있도록 연결
+* **호스트 자원(CPU, Memory, Disk, Network)**
+* *CPU**: VM에 할당된 연산 능력**
+* Memory**: 각 VM이 사용하는 RAM**
+* Disk**: 가상 머신의 저장 공간**
+* Network**: VM이 외부 네트워크와 통신할 수 있도록 연결
 
 **2. 핵심 개념 요약**
-
-
 
 ✅ **VM은 ESXi 하이퍼바이저를 통해 호스트의 하드웨어 자원을 공유하며 독립적으로 운영됨**
 
@@ -184,7 +173,7 @@ tags: [Network, Cloud]
 
 ## **CPU 가상화(CPU Virtualization) 개요**
 
-![image-20250227125410912](../../../assets/cisco_post_img/2025-02-27-vSphere Virtualization of Resources//image-20250227125410912.png)
+![image-20250227125410912](/assets/cisco_post_img/2025-02-27-vSphere Virtualization of Resources//image-20250227125410912.png)
 
 **CPU 가상화는 물리적 CPU를 여러 가상 머신(VM)에서 공유하여 실행하는 기술로, 성능을 최적화하면서도 독립적인 환경을 제공한다.**
 

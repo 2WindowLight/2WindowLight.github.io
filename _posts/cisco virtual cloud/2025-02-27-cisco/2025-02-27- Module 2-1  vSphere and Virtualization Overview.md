@@ -34,15 +34,15 @@ tags: [Network, Cloud]
 
 **가상화 관련 주요 용어 정리 (2)**
 
-| **용어(Term)**       | **정의(Definition)**                                         |
-| -------------------- | ------------------------------------------------------------ |
-| **vSphere**          | VMware의 서버 가상화 제품으로, ESXi 하이퍼바이저와 vCenter Server 관리 플랫폼을 결합한 솔루션 |
-| **Datastore**        | 가상 머신 파일을 저장하는 스토리지 위치                      |
-| **Maintenance Mode** | 유지보수 작업을 수행하기 전에 ESXi 호스트 및 데이터스토어를 지정하는 모드 |
-| **Cluster**          | **가상 머신(VM)이 공유하는 ESXi 호스트 그룹** (그룹이 아니면 HA 기능을 사용 못함) |
-| **vSphere vMotion**  | 실행 중인 가상 머신(VM)을 **서비스 중단 없이** 한 호스트에서 다른 호스트로 마이그레이션하는 기능 |
-| **vSphere DRS**      | vSphere vMotion을 활용하여 VM을 호스트에 자동 배치하고, VM이 필요한 리소스를 받을 수 있도록 조정하는 클러스터 기능 |
-| **vSphere HA**       | 호스트 하드웨어 장애 발생 시 정상적으로 실행 중인 호스트에서 VM을 자동으로 재시작하여 보호하는 클러스터 기능 |
+| **용어(Term)**                                   | **정의(Definition)**                                         |
+| ------------------------------------------------ | ------------------------------------------------------------ |
+| **vSphere**                                      | VMware의 서버 가상화 제품으로, ESXi 하이퍼바이저와 vCenter Server 관리 플랫폼을 결합한 솔루션 |
+| **Datastore**                                    | 가상 머신 파일을 저장하는 스토리지 위치                      |
+| **Maintenance Mode**                             | 유지보수 작업을 수행하기 전에 ESXi 호스트 및 데이터스토어를 지정하는 모드 |
+| **Cluster**                                      | **가상 머신(VM)이 공유하는 ESXi 호스트 그룹** (그룹이 아니면 HA 기능을 사용 못함) |
+| **vSphere vMotion**                              | 실행 중인 가상 머신(VM)을 **서비스 중단 없이** 한 호스트에서 다른 호스트로 마이그레이션하는 기능 |
+| **vSphere DRS*(Distributed Resource Scheduler)** | vSphere vMotion을 활용하여 VM을 호스트에 자동 배치하고, VM이 필요한 리소스를 받을 수 있도록 조정하는 클러스터 기능 |
+| **vSphere HA*(High Availability)**               | 호스트 하드웨어 장애 발생 시 정상적으로 실행 중인 호스트에서 VM을 자동으로 재시작하여 보호하는 클러스터 기능 |
 
 이 표는 **vSphere 환경에서 필수적으로 사용되는 개념 및 기능**을 정리한 것이다.
 
@@ -151,7 +151,7 @@ tags: [Network, Cloud]
 
 ------
 
-## About Virtual Machines
+## About Virtual Machines(가상 머신)
 
 ![image-20250227120008637](/assets/cisco_post_img/2025-02-27- vSphere and Virtualization Overview//image-20250227120008637.png)
 
@@ -159,33 +159,26 @@ tags: [Network, Cloud]
 
 **1. 가상 머신의 주요 구성 요소**
 
-1.	**게스트 운영 체제(Guest OS)**
+* **게스트 운영 체제(Guest OS)**
 
-​	•	가상 머신에서 실행되는 운영 체제
+  * 가상 머신에서 실행되는 운영 체제
 
-​	•	Windows, Linux 등 다양한 OS 설치 가능
+  * Windows, Linux 등 다양한 OS 설치 가능
 
-2. **VMware Tools** ( 즁요)
+* **VMware Tools** ( 즁요)
+  * VMware 환경에서 가상 머신의 성능을 최적화하고, 기능을 확장하는 소프트웨어
 
-​	•	VMware 환경에서 가상 머신의 성능을 최적화하고, 기능을 확장하는 소프트웨어
-
-3.	**가상 리소스(Virtual Resources)**
-
-​	•	**CPU 및 메모리**: 가상 머신이 실행되기 위한 컴퓨팅 자원
-
-​	•	**네트워크 어댑터(Network Adapters)**: 가상 머신이 네트워크와 통신할 수 있도록 지원
-
-​	•	**디스크 및 컨트롤러(Disks and Controllers)**: 가상 머신의 저장 장치 및 데이터 전송을 담당
-
-​	•	**GPU**: 가상 머신에서 그래픽 처리 기능을 지원
+* **가상 리소스(Virtual Resources)**
+  * **CPU 및 메모리**: 가상 머신이 실행되기 위한 컴퓨팅 자원
+  * **네트워크 어댑터(Network Adapters)**: 가상 머신이 네트워크와 통신할 수 있도록 지원
+  * **디스크 및 컨트롤러(Disks and Controllers)**: 가상 머신의 저장 장치 및 데이터 전송을 담당
+  * **GPU**: 가상 머신에서 그래픽 처리 기능을 지원
 
 **2. 핵심 개념 요약**
 
-​	•	**가상 머신은 물리적 하드웨어 없이 독립적으로 실행되는 컴퓨팅 환경**
-
-​	•	**게스트 운영 체제와 가상화된 하드웨어 자원을 포함하여 독립적인 실행이 가능**
-
-​	•	**VMware Tools를 사용하면 성능 최적화 및 추가 기능 활용 가능**
+* **가상 머신은 물리적 하드웨어 없이 독립적으로 실행되는 컴퓨팅 환경**
+* **게스트 운영 체제와 가상화된 하드웨어 자원을 포함하여 독립적인 실행이 가능**
+* **VMware Tools를 사용하면 성능 최적화 및 추가 기능 활용 가능**
 
 
 
@@ -197,31 +190,17 @@ tags: [Network, Cloud]
 
 ![image-20250227120225558](/assets/cisco_post_img/2025-02-27- vSphere and Virtualization Overview//image-20250227120225558.png)
 
-## 
-
-
-
 **물리적 머신의 한계**
 
-1. **이동 및 복사가 어려움**
+1. **이동 및 복사가 어려움** - 물리적 하드웨어에 종속되어 있어 시스템을 다른 환경으로 이전하기 어려움
 
-​	•	물리적 하드웨어에 종속되어 있어 시스템을 다른 환경으로 이전하기 어려움
+2. **특정 하드웨어에 종속됨** - 물리 서버는 CPU, 메모리, 저장장치 등 특정 하드웨어 구성에 의존
 
-2. **특정 하드웨어에 종속됨**
+3. **수명이 짧음** - 하드웨어 노후화로 인해 일정 기간 사용 후 교체가 필요
 
-​	•	물리 서버는 CPU, 메모리, 저장장치 등 특정 하드웨어 구성에 의존
-
-3. **수명이 짧음**
-
-​	•	하드웨어 노후화로 인해 일정 기간 사용 후 교체가 필요
-
-4. **업그레이드 시 물리적 작업 필요**
-
-​	•	하드웨어를 업그레이드하려면 직접 장비를 교체해야 함
+4. **업그레이드 시 물리적 작업 필요** - 하드웨어를 업그레이드하려면 직접 장비를 교체해야 함
 
 **가상 머신(VM)의 장점**
-
-
 
 ✅ **이동성과 복사 용이**: VM 파일만 복사하면 쉽게 다른 서버로 이동 가능
 
@@ -277,17 +256,13 @@ tags: [Network, Cloud]
 
 **1. 주요 구성 요소**
 
-​	1.	**ESXi**
+* **ESXi**
+  *  **하이퍼바이저(Hypervisor)** 역할 수행
+  * 가상 머신(VM)을 실행하는 **기반 인프라**
 
-​	•	**하이퍼바이저(Hypervisor)** 역할 수행
-
-​	•	가상 머신(VM)을 실행하는 **기반 인프라**
-
-​	2.	**vCenter**
-
-​	•	ESXi 호스트, 가상 머신, 스토리지, 네트워크 등을 **중앙에서 관리하는 플랫폼**
-
-​	•	여러 ESXi 호스트를 하나의 관리 인터페이스에서 통합 관리 가능
+*  **vCenter**
+  * ESXi 호스트, 가상 머신, 스토리지, 네트워크 등을 **중앙에서 관리하는 플랫폼**
+  * 여러 ESXi 호스트를 하나의 관리 인터페이스에서 통합 관리 가능
 
 **2. 그림 설명**
 
@@ -305,19 +280,23 @@ tags: [Network, Cloud]
 
 ------
 
-## Types of Virtualization
+## Types of Virtualization (가상화 종류)
 
 ![image-20250227120806705](/assets/cisco_post_img/2025-02-27- vSphere and Virtualization Overview//image-20250227120806705.png)
 
-Server Virtualization : VSphere 서버 가상화 솔루션
+**Server Virtualization : VSphere 서버 가상화 솔루션**
 
-Network Virtualization : NSX 네트워크 가상화 솔루션
+**Network Virtualization : NSX 네트워크 가상화 솔루션**
 
-Storage Virtualization : vSAN 스토리지 지역 네트워크
+**Storage Virtualization : vSAN 스토리지 지역 네트워크**
 
-Horizon: desktop 가상화 솔루션
+**Horizon: desktop 가상화 솔루션**
 
+**Aria : 관리툴**
 
+**VCF : 자동화**
+
+------
 
 **가상화의 유형 (Types of Virtualization)**
 
@@ -329,25 +308,25 @@ Horizon: desktop 가상화 솔루션
 
 **1. 주요 가상화 유형**
 
-​	1.	**서버 가상화(Server Virtualization)**
+1. **서버 가상화(Server Virtualization)**
 
 ​	•	물리적 서버 하나를 여러 개의 **가상 서버(VM)로 분할하여 실행**
 
 ​	•	서버 리소스를 효율적으로 활용하고 운영 비용 절감
 
-​	2.	**네트워크 가상화(Network Virtualization)**
+2. **네트워크 가상화(Network Virtualization)**
 
 ​	•	물리적 네트워크 장비(라우터, 스위치 등)를 가상 환경에서 **소프트웨어적으로 구현**
 
 ​	•	SDN(소프트웨어 정의 네트워크)과 같은 기술로 유연한 네트워크 운영 가능
 
-​	3.	**스토리지 가상화(Storage Virtualization)**
+3. **스토리지 가상화(Storage Virtualization)**
 
 ​	•	여러 개의 스토리지 장치를 하나의 논리적 단위로 통합
 
 ​	•	데이터 관리 및 확장성을 향상시켜 스토리지 활용도를 최적화
 
-​	4.	**데스크톱 가상화(Desktop Virtualization)**
+4. **데스크톱 가상화(Desktop Virtualization)**
 
 ​	•	개별 PC 환경을 **가상 머신으로 중앙 서버에서 실행**
 
