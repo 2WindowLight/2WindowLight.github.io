@@ -265,7 +265,7 @@ vCenter SSO는 **vSphere 환경의 보안과 인증을 중앙에서 관리**할 
 
 ------
 
-## ** About Enhanced Linked Mode - Enhanced Linked Mode (ELM) 개요**
+##  About Enhanced Linked Mode - Enhanced Linked Mode (ELM) 개요
 
 
 

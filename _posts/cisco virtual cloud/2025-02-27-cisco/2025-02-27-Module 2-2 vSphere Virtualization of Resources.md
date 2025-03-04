@@ -95,7 +95,7 @@ tags: [Network, Cloud]
 
 
 
-이 그림은 **물리 환경과 가상화 환경의 차이점을 비교하여 가상화 기술이 IT 인프라에서 어떻게 활용되는지를 설명**한다.
+이 그림은 **물리 환경과 가상화 환경의 차이점을 비교하여 가상화 기술이 IT 인프라에서 어떻게 활용되는지를 설명**한다.`
 
 ------
 
@@ -154,8 +154,6 @@ tags: [Network, Cloud]
 ​	•	**자원 제어 메커니즘**: 필요에 따라 특정 VM에 더 많은 CPU, 메모리, 네트워크 대역폭 할당 가능
 
 **3. 핵심 개념 요약**
-
-
 
 ✅ **VM은 ESXi 하이퍼바이저를 통해 하나의 물리 서버의 자원을 공유하며 실행됨**
 
@@ -309,8 +307,6 @@ tags: [Network, Cloud]
 
 **2. 가상 스위치(Virtual Switch)의 주요 기능**
 
-
-
 ✅ **VLAN 지원**
 
 ​	•	**VLAN 태깅 및 트렁킹 지원**
@@ -319,15 +315,11 @@ tags: [Network, Cloud]
 
 ​	•	네트워크 분리 및 보안 강화
 
-
-
 ✅ **NIC 팀 구성(NIC Teaming)**
 
 ​	•	**vmnic(가상 네트워크 인터페이스 카드)**를 여러 개 묶어 네트워크 가용성과 성능 향상
 
 ​	•	다중 네트워크 어댑터를 사용하여 **부하 분산 및 장애 복구(Failover) 기능 제공**
-
-
 
 ✅ **보안 및 격리**
 
@@ -337,8 +329,6 @@ tags: [Network, Cloud]
 
 ​	•	해킹 및 보안 공격 방지를 위한 네트워크 분리 기능
 
-
-
 ✅ **STP(Spanning Tree Protocol) 불필요**
 
 ​	•	**가상 스위치는 계층적(싱글 티어) 네트워크 구조를 따름**
@@ -346,8 +336,6 @@ tags: [Network, Cloud]
 ​	•	물리적 네트워크와 달리, **가상 스위치 간 루프가 발생하지 않으므로 STP가 필요 없음**
 
 **3. 핵심 개념 요약**
-
-
 
 ✅ **VM 간 통신은 가상 스위치를 통해 이루어지며, 물리적 네트워크 없이도 연결 가능**
 
@@ -379,11 +367,9 @@ tags: [Network, Cloud]
 
 ​	•	물리적 스토리지의 복잡성을 숨기고 **일관된 저장소 모델을 제공**
 
-
-
 **2. vSphere에서 지원하는 주요 데이터스토어 유형**
 
-✅ **VMFS (VMware Virtual Machine File System)**
+**VMFS (VMware Virtual Machine File System)**
 
 ​	•	**클러스터 파일 시스템**으로, 가상 머신을 위한 스토리지 가상화 제공
 
@@ -393,7 +379,7 @@ tags: [Network, Cloud]
 
 ​	•	모든 호스트에서 접근 가능한 스토리지
 
-✅ **NFS (Network File System)**
+ **NFS (Network File System)**
 
 ​	•	**NAS(Network Attached Storage)와 통신하는 파일 공유 프로토콜**
 
@@ -401,9 +387,7 @@ tags: [Network, Cloud]
 
 ​	•	VMFS와 달리, **파일 기반 접근 방식 사용**
 
-
-
-✅ **vSAN (VMware vSAN)**
+ **vSAN (VMware vSAN)**
 
 ​	•	**소프트웨어 정의 스토리지(SDS) 솔루션**
 
@@ -411,9 +395,7 @@ tags: [Network, Cloud]
 
 ​	•	클러스터 내 ESXi 호스트들이 로컬 디스크를 공유하여 **통합 데이터스토어 생성**
 
-
-
-✅ **vSphere Virtual Volumes (vVols)**
+ **vSphere Virtual Volumes (vVols)**
 
 ​	•	**SAN/NAS 디바이스를 논리적 저장소 풀로 추상화**
 
@@ -422,8 +404,6 @@ tags: [Network, Cloud]
 ​	•	ESXi 호스트가 직접 스토리지를 관리하지 않고 **스토리지 어레이가 관리**
 
 **3. 핵심 개념 요약**
-
-
 
 ✅ **데이터스토어는 ESXi의 논리적 저장소이며, 물리적 스토리지를 추상화하여 일관된 스토리지 모델 제공**
 

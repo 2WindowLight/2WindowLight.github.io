@@ -87,7 +87,17 @@ vSphere **분산 스위치(VDS)** 는 여러 ESXi 호스트에 걸쳐 **중앙�
 
 ------
 
-**포트 그룹(Port Group) 개념**
+**vSwitch port 종류**
+
+- **port group**
+- **uplink**
+- **VMkernel port**
+
+
+
+------
+
+### **포트 그룹(Port Group) 개념**
 
 **포트 그룹(Port Group)** 은 **vSphere에서 가상 머신(VM) 및 서비스들이 네트워크를 사용할 수 있도록 설정하는 논리적 네트워크 그룹**이다.  포트 그룹을 사용하면 **일관된 네트워크 정책(예: VLAN, 트래픽 쉐이핑, 보안 정책 등)을 적용**할 수 있으며, 표준 스위치(VSS) 및 분산 스위치(VDS)에서 모두 사용된다.
 
@@ -105,11 +115,108 @@ vSphere **분산 스위치(VDS)** 는 여러 ESXi 호스트에 걸쳐 **중앙�
 
 
 
-vSwitch port 종류
+------
 
-- port group
-- uplink
-- VMkernel port
+### **Uplink 포트란**
+
+**Uplink 포트(Uplink Port)**는 **물리적인 네트워크 어댑터(NIC, Network Interface Card)**와 **가상 스위치(vSwitch)**를 연결하는 역할
+
+**Uplink 포트의 역할**
+
+1. **ESXi 호스트의 물리 NIC와 vSwitch 연결**
+   *  ESXi 호스트에는 하나 이상의 물리 NIC가 있으며, 이를 **업링크 포트**를 통해 vSwitch에 연결합니다.
+   * 가상 머신(VM) 및 VMkernel 트래픽이 외부 네트워크와 통신할 수 있도록 지원합니다.
+
+2. **네트워크 트래픽 전달**
+   * VM과 외부 네트워크 간의 트래픽을 처리합니다.
+   * 업링크를 통해 vSwitch가 물리 네트워크와 통신하여 패킷을 송수신합니다.
+
+3. **NIC 팀(NIC Teaming) 구성 가능**
+   * **다중 업링크**를 구성하여 **고가용성(HA)** 및 **로드 밸런싱**을 지원합니다.
+   * 여러 개의 물리 NIC를 vSwitch에 연결하면 네트워크 장애 시 자동으로 대체 NIC가 사용됩니다.
+
+------
+
+**Uplink 포트 구성**
+
+**✅ 표준 가상 스위치(Standard vSwitch)에서 Uplink**
+
+​	•	기본적으로 ESXi 호스트의 **물리 NIC을 vSwitch에 바인딩**하여 업링크로 사용합니다.
+
+​	•	예시:
+
+​	•	vmnic0, vmnic1을 vSwitch0의 Uplink로 설정
+
+
+
+**✅ 분산 가상 스위치(VDS, vSphere Distributed Switch)에서 Uplink**
+
+​	•	VDS에서는 **업링크 포트 그룹(Uplink Port Group)**을 사용하여 업링크를 관리합니다.
+
+​	•	업링크는 모든 ESXi 호스트에서 **일관되게 구성**되며, VDS 정책을 적용할 수 있습니다.
+
+------
+
+**Uplink 포트의 주요 기능**
+
+| **기능**                 | **설명**                                                     |
+| ------------------------ | ------------------------------------------------------------ |
+| **외부 네트워크와 연결** | 업링크를 통해 vSwitch가 물리 네트워크와 통신                 |
+| **로드 밸런싱**          | 여러 개의 NIC를 묶어 네트워크 부하를 분산                    |
+| **고가용성(HA)**         | 한 개의 물리 NIC에 장애가 발생하면 다른 NIC가 자동으로 트래픽을 처리 |
+| **VLAN 태깅**            | VLAN ID를 설정하여 트래픽을 논리적으로 구분 가능             |
+
+**4️⃣ Uplink 포트 구성 예시**
+
+
+
+**(1) 표준 스위치에서 업링크 추가**
+
+​	1.	**vSphere Client 로그인**
+
+​	2.	**ESXi 호스트 → Configure → Networking → Virtual Switches** 선택
+
+​	3.	**vSwitch0 선택 후 “Edit” 클릭**
+
+​	4.	**Uplink 추가(vmnic1, vmnic2 등 선택)**
+
+​	5.	**Save** 클릭하여 적용
+
+
+
+**(2) 분산 스위치에서 업링크 추가**
+
+​	1.	**vSphere Client → Networking → Distributed Switch 선택**
+
+​	2.	**“Uplink Port Group” 설정**
+
+​	3.	**Uplink1, Uplink2 등 추가**
+
+​	4.	**ESXi 호스트의 물리 NIC을 업링크에 매핑**
+
+​	5.	**저장 후 적용**
+
+------
+
+**5️⃣ Uplink vs. 다른 vSwitch 포트 비교**
+
+| **포트 타입**     | **역할**                                        |
+| ----------------- | ----------------------------------------------- |
+| **Port Group**    | VM들이 속하는 가상 네트워크 그룹                |
+| **Uplink**        | 물리 NIC과 vSwitch를 연결하는 포트              |
+| **VMkernel Port** | vMotion, 관리 트래픽, 스토리지 통신을 위한 포트 |
+
+**✅ 결론**
+
+​	•	**Uplink 포트**는 **ESXi 호스트의 물리 NIC과 vSwitch를 연결하는 포트**
+
+​	•	**외부 네트워크와의 연결, NIC 팀, VLAN 태깅, HA/로드 밸런싱** 등을 제공
+
+​	•	**표준 가상 스위치(vSwitch) 및 분산 가상 스위치(VDS)** 모두에서 사용 가능
+
+
+
+ **vSphere 네트워크 아키텍처에서 필수적인 요소이며, 올바른 Uplink 설정은 가상 환경의 성능과 안정성을 보장합니다.** 
 
 ------
 
@@ -350,6 +457,8 @@ vSphere는 **각 인벤토리 뷰(Inventory View)별로 고유한 폴더 구조*
 ## Adding ESXi Hosts to vCenter
 
 ![image-20250228175359997](/assets/cisco_post_img/2025-02-28-Module 4-3 Managing vCenter Inventory A//image-20250228175359997.png)
+
+vSphere Client를 사용하여 ESXi 호스트를 vCenter에 추가할 수 있다.
 
 ------
 
