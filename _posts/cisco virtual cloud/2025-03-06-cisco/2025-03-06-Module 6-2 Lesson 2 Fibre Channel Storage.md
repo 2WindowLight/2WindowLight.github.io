@@ -1,7 +1,7 @@
 ---
 title: <h0>Module 6-2 Lesson 2 Fibre Channel Storage</h0>
 author: cotes   
-categories: [cisco virtual cloud, 2025-03-05-cisco]
+categories: [cisco virtual cloud, 2025-03-06-cisco]
 tags: [Network, Cloud]
 
 

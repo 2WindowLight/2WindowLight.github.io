@@ -1,7 +1,7 @@
 ---
 title: <h0>6-4 Lesson 4 VMFS Datastores</h0>
 author: cotes   
-categories: [cisco virtual cloud, 2025-03-05-cisco]
+categories: [cisco virtual cloud, 2025-03-06-cisco]
 tags: [Network, Cloud]
 
 
