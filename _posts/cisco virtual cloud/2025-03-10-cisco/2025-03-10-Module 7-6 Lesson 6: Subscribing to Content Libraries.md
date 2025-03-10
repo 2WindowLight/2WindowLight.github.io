@@ -1,5 +1,5 @@
 ---
-title: <h0>Module 7-6 Lesson 6: Subscribing to Content Libraries</h0>
+title: <h0>Module 7-6 Lesson 6 Subscribing to Content Libraries</h0>
 author: cotes   
 categories: [cisco virtual cloud, 2025-03-10-cisco]
 tags: [Network, Cloud]
