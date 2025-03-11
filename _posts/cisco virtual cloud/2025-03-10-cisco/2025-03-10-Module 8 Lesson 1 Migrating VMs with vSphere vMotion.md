@@ -113,9 +113,7 @@ VM 마이그레이션은 vSphere 환경에서 VM을 효율적으로 관리하고
 
 ## Migration Types
 
-![image-20250310112751491](/assets/cisco_post_img/8장//image-20250310112751491.png)
-
-
+![image-20250310180851643](/assets/cisco_post_img/2025-03-10-Module 8 Lesson 1 Migrating VMs with vSphere vMotion//image-20250310180851643.png)
 
 ------
 
@@ -123,7 +121,7 @@ VM 마이그레이션은 vSphere 환경에서 VM을 효율적으로 관리하고
 
 ## **vSphere vMotion(가상 머신 이동)**
 
-![image-20250310113315430](/assets/cisco_post_img/8장//image-20250310113315430.png)
+![image-20250310180955547](/assets/cisco_post_img/2025-03-10-Module 8 Lesson 1 Migrating VMs with vSphere vMotion//image-20250310180955547.png)
 
 vSphere vMotion은 실행 중인 **VM(가상 머신)을 한 ESXi 호스트에서 다른 ESXi 호스트로 이동**하는 기능이다. 이를 통해 하드웨어 유지보수 또는 부하 분산을 수행할 수 있으며, VM의 가용성을 유지할 수 있다.
 
