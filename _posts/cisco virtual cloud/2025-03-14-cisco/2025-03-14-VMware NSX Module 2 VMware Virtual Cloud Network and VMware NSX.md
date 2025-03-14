@@ -359,8 +359,6 @@ NSX는 **자동화, 운영 최적화, 문제 해결 기능을 강화하여 네�
 
 
 
-
-
 NSX 아키텍처는 **관리(Management), 제어(Control), 데이터(Data) 플레인**의 세 가지 주요 요소로 구성된다.
 
 이러한 분리는 **확장성(Scalability)과 네트워크 성능 향상**을 가능하게 한다.
@@ -371,27 +369,20 @@ NSX 아키텍처는 **관리(Management), 제어(Control), 데이터(Data) 플�
 
 
 
-**1. 관리 플레인 (Management Plane)**
+1. **관리 플레인 (Management Plane)**
 
-​	•	**역할**:
+   * **역할**:
+     * 사용자 설정 및 정책을 저장하고 관리.
+     * NSX 환경의 API 요청 처리 및 UI 제공.
 
-​	•	사용자 설정 및 정책을 저장하고 관리.
+   * **구성 요소**:
+     * **NSX Manager**
+     * **REST API 및 웹 UI 인터페이스 제공**.
 
-​	•	NSX 환경의 API 요청 처리 및 UI 제공.
-
-​	•	**구성 요소**:
-
-​	•	**NSX Manager**
-
-​	•	**REST API 및 웹 UI 인터페이스 제공**.
-
-​	•	모든 NSX 설정을 중앙에서 관리.
-
-​	•	API 기반으로 vRealize Automation, OpenStack, Kubernetes 등과 통합 가능.
-
-​	•	**NSX Management Cluster**
-
-​	•	고가용성을 위해 여러 개의 NSX Manager 노드를 클러스터링.
+   * 모든 NSX 설정을 중앙에서 관리.
+   * API 기반으로 vRealize Automation, OpenStack, Kubernetes 등과 통합 가능.
+   * **NSX Management Cluster**
+   * 고가용성을 위해 여러 개의 NSX Manager 노드를 클러스터링.
 
 
 
@@ -399,29 +390,23 @@ NSX 아키텍처는 **관리(Management), 제어(Control), 데이터(Data) 플�
 
 
 
-**2. 제어 플레인 (Control Plane)**
+2. **제어 플레인 (Control Plane)**
 
-​	•	**역할**:
+   * **역할**:
+     * 가상 네트워크 및 보안 상태 계산 및 배포.
+     * 데이터 플레인(ESXi, NSX Edge)과 동기화하여 네트워크 경로 설정.
 
-​	•	가상 네트워크 및 보안 상태 계산 및 배포.
+   * **구성 요소**:
 
-​	•	데이터 플레인(ESXi, NSX Edge)과 동기화하여 네트워크 경로 설정.
+     * **중앙 컨트롤 플레인 (Central Control Plane, CCP)**
+       * 전체 NSX 네트워크의 상태 관리.
+       * 네트워크 경로 및 보안 정책을 계산하여 로컬 컨트롤 플레인에 전달.
 
-​	•	**구성 요소**:
+     * **로컬 컨트롤 플레인 (Local Control Plane, LCP)**
+       * ESXi 호스트 및 NSX Edge에서 실행.
+       * 중앙 컨트롤 플레인(CCP)에서 받은 정보를 바탕으로 로컬에서 패킷을 처리.
 
-​	•	**중앙 컨트롤 플레인 (Central Control Plane, CCP)**
-
-​	•	전체 NSX 네트워크의 상태 관리.
-
-​	•	네트워크 경로 및 보안 정책을 계산하여 로컬 컨트롤 플레인에 전달.
-
-​	•	**로컬 컨트롤 플레인 (Local Control Plane, LCP)**
-
-​	•	ESXi 호스트 및 NSX Edge에서 실행.
-
-​	•	중앙 컨트롤 플레인(CCP)에서 받은 정보를 바탕으로 로컬에서 패킷을 처리.
-
-​	•	**NSX Manager**와 통합되어 **관리 플레인과 컨트롤 플레인이 하나의 노드에서 동작 가능**.
+   * **NSX Manager**와 통합되어 **관리 플레인과 컨트롤 플레인이 하나의 노드에서 동작 가능**.
 
 
 
@@ -429,27 +414,21 @@ NSX 아키텍처는 **관리(Management), 제어(Control), 데이터(Data) 플�
 
 
 
-**3. 데이터 플레인 (Data Plane)**
+3. 데이터 플레인 (Data Plane)
 
-​	•	**역할**:
+   * **역할**:
+     * 실제 패킷 전송을 담당.
+     * 네트워크 트래픽을 분산 처리하여 성능 향상.
 
-​	•	실제 패킷 전송을 담당.
+   * **구성 요소**:
+     * **ESXi 호스트 및 VDS (vSphere Distributed Switch)**
+     * vCenter에서 관리하는 ESXi 환경에서는 **VDS를 통해 NSX 트래픽을 처리**.
 
-​	•	네트워크 트래픽을 분산 처리하여 성능 향상.
+   * **NSX Edge 노드**
+     * NAT, VPN, 로드 밸런싱 등의 네트워크 서비스를 제공.
 
-​	•	**구성 요소**:
-
-​	•	**ESXi 호스트 및 VDS (vSphere Distributed Switch)**
-
-​	•	vCenter에서 관리하는 ESXi 환경에서는 **VDS를 통해 NSX 트래픽을 처리**.
-
-​	•	**NSX Edge 노드**
-
-​	•	NAT, VPN, 로드 밸런싱 등의 네트워크 서비스를 제공.
-
-​	•	**전송 노드 (Transport Nodes)**
-
-​	•	NSX가 적용된 **ESXi 호스트 및 Edge 노드를 포함하는 데이터 플레인**.
+   * **전송 노드 (Transport Nodes)**
+     * NSX가 적용된 **ESXi 호스트 및 Edge 노드를 포함하는 데이터 플레인**.
 
 
 
@@ -457,13 +436,10 @@ NSX 아키텍처는 **관리(Management), 제어(Control), 데이터(Data) 플�
 
 
 
-**4. 소비 플레인 (Consumption Plane)**
-
-​	•	**NSX를 사용하는 클라우드 관리 플랫폼(CMP)과의 통합 인터페이스**.
-
-​	•	**NSX UI, REST API, vRealize Automation, Kubernetes, OpenStack 등과 연결 가능**.
-
-​	•	**사용자는 CMP를 통해 네트워크 가상화를 활용하여 애플리케이션을 배포**.
+4. **소비 플레인 (Consumption Plane)**
+   * **NSX를 사용하는 클라우드 관리 플랫폼(CMP)과의 통합 인터페이스**.
+   * **NSX UI, REST API, vRealize Automation, Kubernetes, OpenStack 등과 연결 가능**.
+   * **사용자는 CMP를 통해 네트워크 가상화를 활용하여 애플리케이션을 배포**.
 
 
 
