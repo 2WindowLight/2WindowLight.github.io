@@ -1,5 +1,5 @@
 ---
-title: <h0VMware NSX Module 2-2 VMware Virtual Cloud Network and VMware NSX</h0>
+title: <h0>VMware NSX Module 2-2 VMware Virtual Cloud Network and VMware NSX</h0>
 author: cotes   
 categories: [cisco virtual cloud,2025-03-14-cisco]
 tags: [Network, Cloud]
