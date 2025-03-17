@@ -2,7 +2,7 @@
 title: <h0>VMware NSX Install, Configure, Manage</h0>
 author: cotes   
 categories: [cisco virtual cloud,2025-03-14-cisco]
-tags: [Network, Cloud]
+tags: [Network, Cloud, NSX]
 
 
 
