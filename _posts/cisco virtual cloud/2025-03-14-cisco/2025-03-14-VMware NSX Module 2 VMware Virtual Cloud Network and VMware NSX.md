@@ -236,7 +236,7 @@ NSX는 **Platform, Networking, Security and Services** 영역에서 다양한 �
 
 3. **보안 및 서비스(Security and Services) 기능**
    * **게이트웨이 방화벽(Gateway Firewall) 및 분산 방화벽(Distributed Firewall) 제공**
-   * **침입 탐지 및 방지 시스템(IDPS) 지원**
+   * **침입 탐지 및 방지 시스템(IDPS [intrusion detection prevention system]) 지원**
    * **악성코드 방어(Malware Prevention) 기능**
    * **URL 필터링 및 FQDN 분석 지원**
    * **TLS 트래픽 검사(TLS Inspection) 기능**
@@ -873,8 +873,4 @@ NSX 관리 클러스터에서 **로드 밸런서를 사용하면 모든 NSX Mana
 ------
 
 ------
-
-### 기타
-
-overlay (logical infra) <-> underlay (physical infra)
 
