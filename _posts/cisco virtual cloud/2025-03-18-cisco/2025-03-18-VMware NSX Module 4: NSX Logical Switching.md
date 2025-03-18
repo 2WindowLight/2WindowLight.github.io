@@ -679,7 +679,7 @@ Geneve 프로토콜은 터널링을 위한 새로운 접근 방식을 제공하�
 
 ​	•	**오버레이 네트워크** 를 통해 확장성과 유연성을 제공.
 
-​	•	**TEP(Tunnel Endpoint)와 Geneve 캡슐화** 를 사용하여 ESXi 트랜스포트 노드 간 패킷 전달 수행.
+​	•	**TEP(Tunnel Endpoint)와 Geneve 캡슐화** 를 사용하여 ESXi 트랜스포트 노드 간 패킷 전달 수행
 
 
 
