@@ -13,9 +13,4 @@
   [![Open in Dev Containers](https://img.shields.io/badge/Dev_Containers-Open-deepskyblue?logo=linuxcontainers)][open-container]
 
   <img width="1702" alt="image" src="https://github.com/user-attachments/assets/bfc9fcae-1e21-4940-84aa-cf79f2bae7a3" />
-<br>
-<img width="1702" alt="image" src="https://github.com/user-attachments/assets/f2d24a84-76a6-462b-a942-e4b6697f18d1" />
-<br>
-<img width="1705" alt="image" src="https://github.com/user-attachments/assets/02efa350-1090-400b-a723-483d5060faf2" />
-<br>
-![Uploading image.png…]()
+
