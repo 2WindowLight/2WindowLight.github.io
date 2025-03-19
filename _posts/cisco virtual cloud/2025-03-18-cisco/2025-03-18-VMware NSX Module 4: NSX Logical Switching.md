@@ -687,3 +687,9 @@ Geneve 프로토콜은 터널링을 위한 새로운 접근 방식을 제공하�
 
 ------
 
+NSX 설치 순서
+
+1. nsx manger 배포
+2. nsx manager 접속
+3. vcenter server를 nsx manager emdfhr
+4. 추가 nsx manager 배포
