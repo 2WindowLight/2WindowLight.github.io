@@ -90,7 +90,7 @@ NSX에서 논리적 라우팅(Logical Routing)은 **동서(East-West) 및 남북
 
 ## **Logical Routing in NSX(논리적 라우팅 개요)**
 
-![image-20250319153430012](/assets/cisco_post_img/2025-03-19-VMware NSX Module 5: NSX Logical Routing //image-20250319153430012.png)
+![image-20250319162543029](/assets/cisco_post_img/2025-03-19-VMware NSX Module 5: NSX Logical Routing //image-20250319162543029.png)
 
 ------
 
@@ -229,7 +229,7 @@ NSX의 Logical Routing을 사용하면 **기존 물리적 네트워크의 라우
 
 ## **Gateway Components: Distributed Router(DR) & Service Router(SR)** [중요]
 
-![image-20250319155732101](/assets/cisco_post_img/2025-03-19-VMware NSX Module 5: NSX Logical Routing //image-20250319155732101.png)
+![image-20250319162628092](/assets/cisco_post_img/2025-03-19-VMware NSX Module 5: NSX Logical Routing //image-20250319162628092.png)
 
 ------
 
@@ -359,7 +359,7 @@ NSX에서 **DR(분산 라우터)과 SR(서비스 라우터)를 결합하여 트�
 
 ## **NSX Gateway 인터페이스 개요 [중요]**
 
-![image-20250319160505387](/assets/cisco_post_img/2025-03-19-VMware NSX Module 5: NSX Logical Routing //image-20250319160505387.png)
+![image-20250319162641253](/assets/cisco_post_img/2025-03-19-VMware NSX Module 5: NSX Logical Routing //image-20250319162641253.png)
 
 
 
