@@ -1,5 +1,5 @@
 ---
-title: <h0>VMware NSX Module 5 NSX Logical Routing </h0>
+title: <h0>VMware NSX Module 5 NSX Logical Routing</h0>
 author: cotes 
 categories: [cisco virtual cloud,2025-03-19-cisco]
 tags: [Network, Cloud, NSX]
@@ -14,9 +14,8 @@ tags: [Network, Cloud, NSX]
 
 
 
+
 ---
-
-
 
 # Module 5: NSX Logical Routing 
 
@@ -90,7 +89,7 @@ NSX에서 논리적 라우팅(Logical Routing)은 **동서(East-West) 및 남북
 
 ## **Logical Routing in NSX(논리적 라우팅 개요)**
 
-![image-20250319162918443](/assets/cisco_post_img/2025-03-19-VMware NSX Module 5 NSX Logical Routing //image-20250319162918443.png)
+![image-20250319163431865](/assets/cisco_post_img/2025-03-19-VMware NSX Module 5 NSX Logical Routing//image-20250319163431865.png)
 
 ------
 
@@ -229,7 +228,7 @@ NSX의 Logical Routing을 사용하면 **기존 물리적 네트워크의 라우
 
 ## **Gateway Components: Distributed Router(DR) & Service Router(SR)** [중요]
 
- ![image-20250319162935797](/assets/cisco_post_img/2025-03-19-VMware NSX Module 5 NSX Logical Routing //image-20250319162935797.png)
+ ![image-20250319163502520](/assets/cisco_post_img/2025-03-19-VMware NSX Module 5 NSX Logical Routing//image-20250319163502520.png)
 
 ------
 
@@ -359,9 +358,9 @@ NSX에서 **DR(분산 라우터)과 SR(서비스 라우터)를 결합하여 트�
 
 ## **NSX Gateway 인터페이스 개요 [중요]**
 
-![image-20250319162947819](/assets/cisco_post_img/2025-03-19-VMware NSX Module 5 NSX Logical Routing //image-20250319162947819.png)
 
 
+![image-20250319163519878](/assets/cisco_post_img/2025-03-19-VMware NSX Module 5 NSX Logical Routing//image-20250319163519878.png)
 
 
 
