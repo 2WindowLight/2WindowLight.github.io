@@ -55,6 +55,18 @@ tags: [Network, Cloud, NSX]
 
 ![image-20250320111249152](/assets/cisco_post_img/2025-03-20-VMware NSX Module 5-2 NSX Edge and Edge Clusters//image-20250320111249152.png)
 
+**NSX Edge 클러스터란?**
+
+​	•	**Edge 노드(Edge Node) 여러 개를 묶어 하나의 클러스터로 구성**하여 **네트워크 및 보안 서비스를 제공**하는 구조이다.
+
+​	•	**NSX-T에서 Tier-0 및 Tier-1 게이트웨이를 실행**하는데 사용된다.
+
+​	•	**고가용성(HA) 및 확장성을 보장**할 수 있도록 설계된다.
+
+------
+
+
+
 1. **추가 리소스를 통한 스케일 아웃**
    * 여러 Edge 노드를 그룹화하여 리소스를 확장함으로써 대규모 환경에서도 안정적인 네트워크 서비스를 제공할 수 있습니다.
 
@@ -122,7 +134,7 @@ tags: [Network, Cloud, NSX]
 
 ------
 
-**NSX Edge VM 크기 옵션(NSX Edge VM Sizing Options)**
+## **NSX Edge VM 크기 옵션(NSX Edge VM Sizing Options)**
 
 
 
