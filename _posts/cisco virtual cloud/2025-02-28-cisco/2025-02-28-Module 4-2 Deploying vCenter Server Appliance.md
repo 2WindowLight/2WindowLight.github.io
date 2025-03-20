@@ -2,7 +2,7 @@
 title: <h0>Module 4-2 Deploying vCenter Server Appliance</h0>
 author: cotes   
 categories: [cisco virtual cloud, 2025-02-28-cisco]
-tags: [Network, Cloud]
+tags: [Network, Cloud, vShphere]
 
 
 

@@ -2,7 +2,7 @@
 title: <h0>Introduction to vSphere Networking and Security </h0>
 author: cotes   
 categories: [cisco virtual cloud, 2025-03-05-cisco]
-tags: [Network, Cloud]
+tags: [Network, Cloud, vShphere]
 
 
 

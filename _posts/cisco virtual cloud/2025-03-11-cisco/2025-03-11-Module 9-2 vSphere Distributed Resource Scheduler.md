@@ -2,7 +2,7 @@
 title: <h0>Module 9-2 vSphere Distributed Resource Scheduler</h0>
 author: cotes   
 categories: [cisco virtual cloud,2025-03-11-cisco]
-tags: [Network, Cloud]
+tags: [Network, Cloud, vShphere]
 
 
 

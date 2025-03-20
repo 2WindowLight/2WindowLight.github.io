@@ -2,7 +2,7 @@
 title: <h0>Module 7-(1~2) Deploying Virtual Machines</h0>
 author: cotes   
 categories: [cisco virtual cloud, 2025-03-07-cisco]
-tags: [Network, Cloud]
+tags: [Network, Cloud, vShphere]
 
 
 

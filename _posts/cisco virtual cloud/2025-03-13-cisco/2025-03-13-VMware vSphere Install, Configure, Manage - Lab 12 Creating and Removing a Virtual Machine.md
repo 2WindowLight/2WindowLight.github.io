@@ -2,7 +2,7 @@
 title: <h0>VMware vSphere Install, Configure, Manage - Lab 12 Creating and Removing a Virtual Machine</h0>
 author: cotes   
 categories: [cisco virtual cloud,2025-03-13-cisco]
-tags: [Network, Cloud]
+tags: [Network, Cloud, vShphere]
 
 
 

@@ -2,7 +2,7 @@
 title: <h0>hol-2530 Practice Module 5</h0>
 author: cotes   
 categories: [cisco virtual cloud,2025-03-11-cisco]
-tags: [Network, Cloud]
+tags: [Network, Cloud,vShphere]
 
 
 

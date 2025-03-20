@@ -2,7 +2,7 @@
 title: <h0>VMware vSphere Install, Configure, Manage - Lab 7 Creating Standard Switches</h0>
 author: cotes   
 categories: [cisco virtual cloud,2025-03-13-cisco]
-tags: [Network, Cloud]
+tags: [Network, Cloud, vShphere]
 
 
 
@@ -150,6 +150,7 @@ sa-esxi-01.vclass.local에서 **vSphere 표준 스위치 설정을 확인**하�
    3. Ready to Complete 페이지에서 정보를 확인하고 FINISH 클릭.
 4. **Virtual Switches** 패널에서 vSwitch1을 확장하고, "Production" 포트 그룹과 vmnic2가 있는지 확인.
    
+
 ![image-20250313131252820](/assets/cisco_post_img/2025-03-13-VMware vSphere Install, Configure, Manage - Lab 7 Creating Standard Switches//image-20250313131252820.png)
 
 

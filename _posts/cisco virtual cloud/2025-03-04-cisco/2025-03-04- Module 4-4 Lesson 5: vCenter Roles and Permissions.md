@@ -2,7 +2,7 @@
 title: <h0>Module 4-4 Lesson 5 vCenter Roles and Permissions</h0>
 author: cotes   
 categories: [cisco virtual cloud, 2025-03-04-cisco]
-tags: [Network, Cloud]
+tags: [Network, Cloud, vShphere]
 
 
 

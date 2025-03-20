@@ -2,7 +2,7 @@
 title: <h0>Module 5-2 Virtual Switch Networking Policies</h0>
 author: cotes   
 categories: [cisco virtual cloud, 2025-03-04-cisco]
-tags: [Network, Cloud]
+tags: [Network, Cloud, vShphere]
 
 
 

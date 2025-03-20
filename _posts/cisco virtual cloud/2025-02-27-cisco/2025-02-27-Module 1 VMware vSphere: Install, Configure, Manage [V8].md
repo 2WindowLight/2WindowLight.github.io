@@ -2,7 +2,7 @@
 title: <h0>Module 1 VMware vSphere Install, Configure, Manage</h0>
 author: cotes   
 categories: [cisco virtual cloud, 2025-02-27-cisco]
-tags: [Network, Cloud]
+tags: [Network, Cloud, vShphere]
 
 
 

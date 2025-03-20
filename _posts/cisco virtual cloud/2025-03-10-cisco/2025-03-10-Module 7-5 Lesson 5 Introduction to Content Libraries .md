@@ -2,7 +2,7 @@
 title: <h0>Module 7-5 Lesson 5 Introduction to Content Libraries</h0>
 author: cotes   
 categories: [cisco virtual cloud,2025-03-10-cisco]
-tags: [Network, Cloud]
+tags: [Network, Cloud, vShphere]
 
 
 

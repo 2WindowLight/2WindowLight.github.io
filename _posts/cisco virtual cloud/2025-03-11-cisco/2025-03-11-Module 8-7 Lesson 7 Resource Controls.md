@@ -2,7 +2,7 @@
 title: <h0>Module 8-7 Lesson 7 Resource Controls</h0>
 author: cotes   
 categories: [cisco virtual cloud,2025-03-11-cisco]
-tags: [Network, Cloud]
+tags: [Network, Cloud, vShphere]
 
 
 

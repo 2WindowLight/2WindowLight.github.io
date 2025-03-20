@@ -2,7 +2,7 @@
 title: <h0>Module 8 Lesson 1 Migrating VMs with vSphere vMotion</h0>
 author: cotes   
 categories: [cisco virtual cloud, 2025-03-10-cisco]
-tags: [Network, Cloud]
+tags: [Network, Cloud,vShphere]
 
 
 

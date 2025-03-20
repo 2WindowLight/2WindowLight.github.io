@@ -2,7 +2,7 @@
 title: <h0>Virtualization</h0>
 author: cotes   
 categories: [cisco virtual cloud, 2025-02-26-cisco]
-tags: [Network, Cloud]
+tags: [Network, Cloud, vShphere]
 
 
 

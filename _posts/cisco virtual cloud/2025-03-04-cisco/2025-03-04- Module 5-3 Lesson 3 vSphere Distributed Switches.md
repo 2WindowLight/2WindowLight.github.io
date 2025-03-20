@@ -2,7 +2,7 @@
 title: <h0>Module 5-3 Lesson 3 vSphere Distributed Switches</h0>
 author: cotes   
 categories: [cisco virtual cloud, 2025-03-04-cisco]
-tags: [Network, Cloud]
+tags: [Network, Cloud, [2024] VCP-DCV for vSphere 8.x (Exam 2V0-21.23) Official Cert Guide.epub]
 
 
 
