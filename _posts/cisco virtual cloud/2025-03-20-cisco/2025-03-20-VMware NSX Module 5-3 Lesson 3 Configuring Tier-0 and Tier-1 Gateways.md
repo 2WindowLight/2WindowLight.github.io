@@ -11,10 +11,6 @@ tags: [Network, Cloud, NSX]
 
 ![image-20250320153505741](../../../assets/cisco_post_img/2025-03-20-VMware NSX Module 5-3 Lesson 3 Configuring Tier-0 and Tier-1 Gateways//image-20250320153505741.png)
 
-이 그림은 **NSX-T의 게이트웨이(Tier-0 및 Tier-1)와 세그먼트(Segments) 연결 구조**를 나타낸다.
-
-
-
 ------
 
 
@@ -33,33 +29,20 @@ tags: [Network, Cloud, NSX]
 
 
 
-**2. 그림의 주요 구성 요소**
+2. **그림의 주요 구성 요소**
 
+   1.  **Tier-0 Gateway (T0)**
+      * **외부 네트워크(클라우드)와 연결**
+      * **Uplink Segments를 통해 외부와 통신**
+      * **Tier-1 Gateway와 연결되어 내부 네트워크에 라우팅 제공**
+      * **정적(Static) 또는 동적(Dynamic) 라우팅을 설정하여 물리 네트워크와 통신 가능**
+      * BGP(Border Gateway Protocol) 또는 OSPF 같은 프로토콜을 활용 가능
 
-
-**① Tier-0 Gateway (T0)**
-
-​	•	**외부 네트워크(클라우드)와 연결**
-
-​	•	**Uplink Segments를 통해 외부와 통신**
-
-​	•	**Tier-1 Gateway와 연결되어 내부 네트워크에 라우팅 제공**
-
-​	•	**정적(Static) 또는 동적(Dynamic) 라우팅을 설정하여 물리 네트워크와 통신 가능**
-
-​	•	BGP(Border Gateway Protocol) 또는 OSPF 같은 프로토콜을 활용 가능
-
-
-
-**② Tier-1 Gateway (T1)**
-
-​	•	**내부 가상 네트워크(Segments)와 연결**
-
-​	•	여러 개의 **Segment와 vAPP(Virtual Applications)를 연결하여 트래픽을 관리**
-
-​	•	기본적으로 **Tier-0 Gateway를 통해 외부 네트워크와 연결됨**
-
-​	•	라우팅 기능을 활성화하면 **Tier-0과 통신하여 외부 네트워크와 경로 설정 가능**
+   2. Tier-1 Gateway (T1)
+      * **내부 가상 네트워크(Segments)와 연결**
+      * 여러 개의 **Segment와 vAPP(Virtual Applications)를 연결하여 트래픽을 관리**
+      * 기본적으로 **Tier-0 Gateway를 통해 외부 네트워크와 연결됨**
+      * 라우팅 기능을 활성화하면 **Tier-0과 통신하여 외부 네트워크와 경로 설정 가능**
 
 
 
@@ -77,31 +60,25 @@ tags: [Network, Cloud, NSX]
 
 
 
-**3. NSX-T Gateway 설정 절차**
+3. **NSX-T Gateway 설정 절차**
 
-​	1.	**Tier-1 Gateway 생성 및 세그먼트 연결**
+1. **Tier-1 Gateway 생성 및 세그먼트 연결**
+   * 내부 네트워크 및 vAPP을 Tier-1 Gateway에 연결
 
-​	•	내부 네트워크 및 vAPP을 Tier-1 Gateway에 연결
+2. **Uplink Segments 생성**
+   * Tier-0 Gateway가 물리 네트워크와 연결될 경로 설정
 
-​	2.	**Uplink Segments 생성**
+3. **Tier-0 Gateway 생성 및 업링크 연결**
+   * 외부 네트워크(클라우드, 물리 라우터)와 연결
 
-​	•	Tier-0 Gateway가 물리 네트워크와 연결될 경로 설정
+4. **Tier-0 & Tier-1 Gateway 연결**
+   * 기본적으로 자동 연결되지 않으며, 수동으로 연결 필요
 
-​	3.	**Tier-0 Gateway 생성 및 업링크 연결**
+5. **Tier-0에서 정적 또는 동적 라우팅 설정**
+   * BGP 또는 OSPF 같은 프로토콜을 사용하여 경로 학습
 
-​	•	외부 네트워크(클라우드, 물리 라우터)와 연결
-
-​	4.	**Tier-0 & Tier-1 Gateway 연결**
-
-​	•	기본적으로 자동 연결되지 않으며, 수동으로 연결 필요
-
-​	5.	**Tier-0에서 정적 또는 동적 라우팅 설정**
-
-​	•	BGP 또는 OSPF 같은 프로토콜을 사용하여 경로 학습
-
-​	6.	**경로 광고(Route Advertisement) 활성화**
-
-​	•	Tier-1에서 Tier-0으로 네트워크 정보를 전달하도록 설정
+6. **경로 광고(Route Advertisement) 활성화**
+   * Tier-1에서 Tier-0으로 네트워크 정보를 전달하도록 설정
 
 
 

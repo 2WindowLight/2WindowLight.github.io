@@ -2,7 +2,7 @@
 title: AWS SAA 03 - EBS Volume
 author: cotes   
 categories: [AWS SSA 03]
-tags: [AWS,AWS SSA 03 Section5]
+tags: [AWS,AWS SSA 03 Section7]
 
 
 
