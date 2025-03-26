@@ -806,7 +806,7 @@ NSX에는 광범위한 사전 정의된 서비스 목록이 포함되어 있으�
 
 ------
 
-**Blocking Malicious IPs in the Distributed Firewall(NSX 분산 방화벽에서 악성 IP 차단)**
+## Blocking Malicious IPs in the Distributed Firewall(NSX 분산 방화벽에서 악성 IP 차단)
 
 ![image-20250326124833448](../../../assets/cisco_post_img/2025-02-26-VMware NSX Module 7-2//image-20250326124833448.png)
 
