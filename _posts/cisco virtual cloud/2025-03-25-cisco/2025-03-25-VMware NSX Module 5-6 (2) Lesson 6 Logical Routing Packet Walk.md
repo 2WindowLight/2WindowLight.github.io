@@ -332,21 +332,30 @@ tags: [Network, Cloud, NSX]
 
 
 
+------
+
 **[2] Tier-1 DR 처리**
 
-​	•	기본 게이트웨이 10.1.1.1은 Tier-1 DR에 있음
+* 기본 게이트웨이 10.1.1.1은 Tier-1 DR에 있음
+* Tier-1 DR은 라우팅 테이블을 확인 후 Tier-0 DR로 전달
 
-​	•	Tier-1 DR은 라우팅 테이블을 확인 후 Tier-0 DR로 전달
+<img src="../../../assets/cisco_post_img/2025-03-25-VMware NSX Module 5-6 (2) Lesson 6 Logical Routing Packet Walk//image-20250325123332118.png" alt="image-20250325123332118" style="zoom:50%;" />
 
+* **192.168.10.0/24 네트워크에 대한 특정 경로 존재 X -> 패킷은 기본 게이트웨이인 100.64.16.0 으로 전송**
+* **전송 하는 곳은 동일한 하이퍼 바이저에 있는 Tier-0의 DR 인스턴스**
 
+------
 
 **[3] T1 DR → T0 DR 전송**
 
-​	•	T0-T1 Transit Subnet (100.64.16.0/31)을 통해 패킷 전달
+* T0-T1 Transit Subnet (100.64.16.0/31)을 통해 패킷 전달
+* T0 DR에 도달한 패킷은 Tier-0 라우팅 테이블 확인
 
-​	•	T0 DR에 도달한 패킷은 Tier-0 라우팅 테이블 확인
+<img src="../../../assets/cisco_post_img/2025-03-25-VMware NSX Module 5-6 (2) Lesson 6 Logical Routing Packet Walk//image-20250325123858740.png" alt="image-20250325123858740" style="zoom:50%;" />
 
+* **패킷은 기본 게이트웨이인 169.254.0.2로 전송된다.**
 
+------
 
 **[4] T0 DR → T0 SR 전달**
 
@@ -355,6 +364,8 @@ tags: [Network, Cloud, NSX]
 ​	•	T0 DR은 Internal Transit Subnet (169.254.0.0/25)을 통해 T0 SR로 패킷 전달
 
 
+
+------
 
 **[5] Overlay encapsulation**
 
@@ -366,11 +377,15 @@ tags: [Network, Cloud, NSX]
 
 
 
+------
+
 **[6] Overlay 네트워크 통해 Edge Node로 전달**
 
 ​	•	패킷은 Overlay 네트워크를 통해 Edge Node의 T0 SR에 도달
 
 
+
+------
 
 **[7] T0 SR 처리 및 Northbound 전송**
 
@@ -388,11 +403,15 @@ tags: [Network, Cloud, NSX]
 
 
 
+------
+
 **[8] 외부 라우터 → T0 SR로 패킷 전달**
 
 ​	•	외부 라우터는 목적지 10.1.1.10을 향해 T0 SR로 패킷 전달
 
 
+
+------
 
 **[9] T0 SR → T0 DR 전달**
 
@@ -404,11 +423,15 @@ tags: [Network, Cloud, NSX]
 
 
 
+------
+
 **[10] T0 DR → T1 DR 전달**
 
 ​	•	T0-T1 Transit Subnet (100.64.16.0/31) 사용
 
 
+
+------
 
 **[11] T1 DR → Compute Node의 T1 DR 전달**
 
@@ -418,11 +441,15 @@ tags: [Network, Cloud, NSX]
 
 
 
+------
+
 **[12] Overlay 네트워크 통해 Compute Node 전달**
 
 ​	•	Encapsulation된 패킷은 Compute Node의 T1 DR로 전달됨
 
 
+
+------
 
 **[13] T1 DR → VM 전달**
 
