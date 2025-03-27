@@ -43,6 +43,27 @@ R1(config)# ip nat pool ANY_POOL_NAME 209.165.200.233 209.165.200.234 netmask 25
 R1(config)# ip nat inside source list 1 pool ANY_POOL_NAME overload
 ```
 
+
+
+**Single Address NAT Overload(단일 주소 NAT 오버로드) 방식**
+
+```bash
+R1(config)# ip nat inside source list 1 interface s0/0/1 overload
+R1(config)# access-list 1 permit 172.16.0.0 0.0.255.255
+```
+
+* **단일 공인 IP 주소만 사용** — 여기서는 s0/0/1 인터페이스의 IP 주소
+  * 여러 사설 IP들이 동일한 공인 IP의 **다른 포트 번호**를 사용해 NAT됨
+  * 하나의 공인 IP 주소만 사용되므로, IP 자원이 적을 때 유리함
+    * 단점: 트래픽이 많아질 경우 해당 IP에 부하 집중
+
+| **구성 요소**    | **설명**                                               |
+| ---------------- | ------------------------------------------------------ |
+| ip nat inside    | 내부 → 외부 방향의 NAT 트래픽 지정 (사설 IP가 변환됨)  |
+| source list 1    | ACL 1번에 정의된 IP만 NAT 대상이 됨                    |
+| interface s0/0/1 | 공인 IP가 설정된 실제 인터페이스 (외부 방향)           |
+| overload         | 여러 사설 IP가 하나의 공인 IP를 포트로 공유 (PAT 방식) |
+
  **NAT 인터페이스 설정** - **인터페이스에 inside(내부)와 outside(외부) 설정 적용**
 
 ```bash

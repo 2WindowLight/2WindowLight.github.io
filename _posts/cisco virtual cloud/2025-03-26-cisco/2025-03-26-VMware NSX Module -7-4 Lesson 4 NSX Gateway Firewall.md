@@ -174,6 +174,8 @@ tags: [Network, Cloud, NSX]
 
 
 
+------
+
 **방향(Direction)** 설정 옵션:
 
 
