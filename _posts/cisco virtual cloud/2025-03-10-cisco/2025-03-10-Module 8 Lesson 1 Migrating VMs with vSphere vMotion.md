@@ -54,7 +54,7 @@ tags: [Network, Cloud,vShphere]
 
 ------
 
-**1. VM 마이그레이션 유형**
+**VM 마이그레이션 유형**
 
 | **마이그레이션 유형**     | **설명**                                                    |
 | ------------------------- | ----------------------------------------------------------- |
@@ -67,25 +67,27 @@ tags: [Network, Cloud,vShphere]
 
 
 
-2. **vMotion(실행 중인 VM 마이그레이션)**
-   * VM을 실행 상태에서 유지하면서 한 호스트에서 다른 호스트로 이동 가능
-   * 공유 스토리지를 사용할 경우, VM의 스토리지는 변경되지 않음
-   * VM의 CPU 및 네트워크 상태를 유지하며 마이그레이션 수행
+**vMotion(실행 중인 VM 마이그레이션)**
+
+* VM을 실행 상태에서 유지하면서 한 호스트에서 다른 호스트로 이동 가능
+* 공유 스토리지를 사용할 경우, VM의 스토리지는 변경되지 않음
+* VM의 CPU 및 네트워크 상태를 유지하며 마이그레이션 수행
 
 ------
 
 
 
-3. **Storage vMotion(스토리지 마이그레이션)**
-   * VM을 종료하지 않고 한 데이터스토어에서 다른 데이터스토어로 이동 가능
-   * VM의 가상 디스크(VMDK) 파일을 변경 없이 다른 데이터스토어로 이동
-   * NFS, VMFS, vSAN과 같은 다양한 스토리지 간 이동 가능
+**Storage vMotion(스토리지 마이그레이션)**
+
+* VM을 종료하지 않고 한 데이터스토어에서 다른 데이터스토어로 이동 가능
+* VM의 가상 디스크(VMDK) 파일을 변경 없이 다른 데이터스토어로 이동
+* NFS, VMFS, vSAN과 같은 다양한 스토리지 간 이동 가능
 
 ------
 
 
 
-4. **Cold Migration(종료된 VM 마이그레이션)**
+**Cold Migration(종료된 VM 마이그레이션)**
 
 * 라이브 마이그레이션이라고도 한다.
 * 실행 중이 아닌 VM을 다른 호스트 또는 데이터스토어로 이동하는 방법
@@ -96,14 +98,15 @@ tags: [Network, Cloud,vShphere]
 
 
 
-5. **Cross vCenter vMotion(다른 vCenter 간 VM 이동)**
-   * 서로 다른 vCenter 인스턴스 간 실행 중인 VM을 이동 가능
-   * 동일한 vSphere Single Sign-On(SSO) 도메인 내에서 수행 가능
-   * vMotion 및 Storage vMotion을 활용하여 원격 마이그레이션 지원
+**Cross vCenter vMotion(다른 vCenter 간 VM 이동)**
+
+* 서로 다른 vCenter 인스턴스 간 실행 중인 VM을 이동 가능
+* 동일한 vSphere Single Sign-On(SSO) 도메인 내에서 수행 가능
+* vMotion 및 Storage vMotion을 활용하여 원격 마이그레이션 지원
 
 ------
 
-**7. 결론**
+**결론**
 
 VM 마이그레이션은 vSphere 환경에서 VM을 효율적으로 관리하고 인프라를 최적화하는 필수 기능이다. vMotion, Storage vMotion, Cold Migration, Cross vCenter vMotion 등의 옵션을 활용하면 다운타임 없이 유연한 마이그레이션이 가능하며, 유지보수 및 운영 효율성을 극대화할 수 있다.
 
@@ -157,9 +160,7 @@ vMotion은 VM의 **메모리 상태 및 실행 상태**를 복사하여 대상 �
 
 ​	•	VM을 식별하는 모든 정보(BIOS, EFI, MAC 주소 등)가 함께 전송됨
 
-```
 <img src="attachment://B8B13B3E-238E-43CA-8D8E-65CEEC2622F4.png" width="600"/>
-```
 
 
 

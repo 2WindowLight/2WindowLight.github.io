@@ -45,9 +45,9 @@ Content Library는 vSphere 환경에서 VM 템플릿, ISO 이미지, 스크립�
 
 **2. Content Library 동작 방식**
 
-​	1.	**로컬 라이브러리 생성** → 콘텐츠 저장 및 관리 (템플릿, ISO, 스크립트 등)
+​	1.	**로컬 라이브러리 생성** →  단일 vCenter 인스턴스에서 콘텐츠 저장 및 관리 (템플릿, ISO, 스크립트 등)
 
-​	2.	**게시 라이브러리로 설정** → 원격 vCenter에서 구독할 수 있도록 공개
+​	2.	**게시 라이브러리로 설정** → 원격 vCenter에서 구독할 수 있도록 공개 및 공유
 
 ​	3.	**구독 라이브러리 동기화** → 게시 라이브러리의 변경 사항 자동 반영
 
@@ -133,14 +133,6 @@ Content Library는 vSphere 환경에서 표준화된 VM 배포와 콘텐츠 관�
 ## **Synchronizing Libraries With or Without Enhanced Linked Mode(Enhanced Linked Mode 유무에 따른 라이브러리 동기화)**
 
 ![image-20250310110247988](/assets/cisco_post_img/Untitled//image-20250310110247988.png)
-
-내가 실수했다. 다시 수정해서 제공하겠다.
-
-
-
-
-
-
 
 vCenter에서 퍼블리시된(Published) 라이브러리와 구독된(Subscribed) 라이브러리 간 동기화는 Enhanced Linked Mode 설정 여부에 따라 최적화된 방식으로 수행된다.
 

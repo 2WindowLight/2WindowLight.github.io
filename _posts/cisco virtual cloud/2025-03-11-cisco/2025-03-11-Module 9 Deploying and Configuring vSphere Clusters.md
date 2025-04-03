@@ -72,15 +72,15 @@ vSphere에서 클러스터는 ESXi 호스트 그룹 간의 물리적 자원을 �
 
 ## Creating a vSphere Cluster
 
-![image-20250311113150963](/assets/cisco_post_img/9장//image-20250311113150963.png)
+![image-20250403113712441](../../../assets/cisco_post_img/2025-03-11-Module 9 Deploying and Configuring vSphere Clusters//image-20250403113712441.png)
 
 ------
 
 ------
 
-**클러스터 퀵스타트(Cluster Quickstart) 개요**
+## **클러스터 퀵스타트(Cluster Quickstart) 개요**
 
-![image-20250311115230950](../../../assets/cisco_post_img/9장//image-20250311115230950.png)
+![image-20250403113726608](../../../assets/cisco_post_img/2025-03-11-Module 9 Deploying and Configuring vSphere Clusters//image-20250403113726608.png)
 
 클러스터를 생성한 후, 클러스터 퀵스타트(Cluster Quickstart) 워크플로우를 사용하여 클러스터를 구성할 수 있다.
 
@@ -134,7 +134,7 @@ vSphere에서 클러스터는 ESXi 호스트 그룹 간의 물리적 자원을 �
 
 ## Cluster Quickstart: Activating Services
 
-![image-20250311115244017](../../../assets/cisco_post_img/9장//image-20250311115244017.png)
+![image-20250403113751885](../../../assets/cisco_post_img/2025-03-11-Module 9 Deploying and Configuring vSphere Clusters//image-20250403113751885.png)
 
 ------
 
@@ -142,7 +142,7 @@ vSphere에서 클러스터는 ESXi 호스트 그룹 간의 물리적 자원을 �
 
 ## Cluster Quickstart: Adding Hosts
 
-![image-20250311115258222](../../../assets/cisco_post_img/9장//image-20250311115258222.png)
+![image-20250403113802142](../../../assets/cisco_post_img/2025-03-11-Module 9 Deploying and Configuring vSphere Clusters//image-20250403113802142.png)
 
 ------
 
@@ -150,7 +150,7 @@ vSphere에서 클러스터는 ESXi 호스트 그룹 간의 물리적 자원을 �
 
 ## Cluster Quickstart: Configuring the Cluster
 
-![image-20250311115311112](../../../assets/cisco_post_img/9장//image-20250311115311112.png)
+![image-20250403113817029](../../../assets/cisco_post_img/2025-03-11-Module 9 Deploying and Configuring vSphere Clusters//image-20250403113817029.png)
 
 ------
 
@@ -158,7 +158,7 @@ vSphere에서 클러스터는 ESXi 호스트 그룹 간의 물리적 자원을 �
 
 ## Configuring a Cluster: Distributed Switches
 
-![image-20250311115334141](../../../assets/cisco_post_img/9장//image-20250311115334141.png)
+![image-20250403113829277](../../../assets/cisco_post_img/2025-03-11-Module 9 Deploying and Configuring vSphere Clusters//image-20250403113829277.png)
 
 ------
 
@@ -166,7 +166,7 @@ vSphere에서 클러스터는 ESXi 호스트 그룹 간의 물리적 자원을 �
 
 ## Configuring a Cluster: vSAN and vMotion Traffic
 
-![image-20250311115353652](../../../assets/cisco_post_img/9장//image-20250311115353652.png)
+![image-20250403113839060](../../../assets/cisco_post_img/2025-03-11-Module 9 Deploying and Configuring vSphere Clusters//image-20250403113839060.png)
 
 ------
 
@@ -174,7 +174,7 @@ vSphere에서 클러스터는 ESXi 호스트 그룹 간의 물리적 자원을 �
 
 ## Configuring a Cluster: Advanced Options
 
-![image-20250311120140388](/assets/cisco_post_img/9장//image-20250311120140388.png)
+![image-20250403113848545](../../../assets/cisco_post_img/2025-03-11-Module 9 Deploying and Configuring vSphere Clusters//image-20250403113848545.png)
 
 ------
 
@@ -182,7 +182,15 @@ vSphere에서 클러스터는 ESXi 호스트 그룹 간의 물리적 자원을 �
 
 ## Viewing Cluster Summary Information
 
-![image-20250311120155340](/assets/cisco_post_img/9장//image-20250311120155340.png)
+![image-20250403113856809](../../../assets/cisco_post_img/2025-03-11-Module 9 Deploying and Configuring vSphere Clusters//image-20250403113856809.png)
+
+------
+
+------
+
+## Monitoring Cluster Resources
+
+![image-20250403114032748](../../../assets/cisco_post_img/2025-03-11-Module 9 Deploying and Configuring vSphere Clusters//image-20250403114032748.png)
 
 ------
 

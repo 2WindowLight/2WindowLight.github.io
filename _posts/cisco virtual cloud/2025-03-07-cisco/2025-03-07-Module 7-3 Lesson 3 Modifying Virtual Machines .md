@@ -14,9 +14,41 @@ tags: [Network, Cloud, vShphere]
 
 ------
 
-**Hot-Pluggable Devices in VMware**
+### Learner Objectives(학습 목표)
 
-![image-20250307114752033](/assets/cisco_post_img/2025-03-07-Module 7-3 Lesson 3 Modifying Virtual Machines //image-20250307114752033.png)
+- 가상 머신 설정 및 옵션 설명
+- 핫 플러그 가능 장치 추가
+- 가상 디스크 크기 동적 확장
+
+------
+
+------
+
+## Modifying Virtual Machine Settings(가상 머신 설정 수정)
+
+<img src="../../../assets/cisco_post_img/2025-03-07-Module 7-3 Lesson 3 Modifying Virtual Machines //image-20250403150919358.png" alt="image-20250403150919358" style="zoom:50%;" />
+
+**가상 머신의 설정을 편집하여 구성을 변경할 수 있습니다:**  
+
+- **가상 하드웨어 추가:  
+  전원이 켜진 상태에서도 일부 하드웨어를 추가할 수 있습니다.**  
+
+- **가상 하드웨어 제거:  
+  일부 하드웨어는 전원이 꺼진 상태에서만 제거할 수 있습니다.**  
+
+- **가상 머신 옵션 설정**  
+
+- **가상 머신의 CPU 및 메모리 리소스 제어**
+
+  
+
+------
+
+------
+
+## **Hot-Pluggable Devices in VMware**
+
+<img src="../../../assets/cisco_post_img/2025-03-07-Module 7-3 Lesson 3 Modifying Virtual Machines //image-20250403151329310.png" alt="image-20250403151329310" style="zoom:50%;" />
 
 VMware에서는 **Hot Plug** 기능을 사용하여 가상 머신(VM)에 리소스를 추가할 수 있다. 이를 통해 VM을 종료하지 않고도 특정 하드웨어 리소스를 확장할 수 있다.
 
@@ -54,7 +86,7 @@ VM이 실행된 상태에서 **CPU 및 메모리**를 추가할 수 있는 기�
 
 
 
-**✅ 요구 사항**
+**요구 사항**
 
 ​	1.	**VMware Tools**가 설치되어 있어야 함.
 
@@ -88,9 +120,24 @@ VM이 실행된 상태에서 **CPU 및 메모리**를 추가할 수 있는 기�
 
 ------
 
-Dynamically Increasing Virtual Disk Size
+## Dynamically Increasing Virtual Disk Size(가상 디스크 크기 동적 확장)
 
+![image-20250403151450382](../../../assets/cisco_post_img/2025-03-07-Module 7-3 Lesson 3 Modifying Virtual Machines //image-20250403151450382.png)
 
+**전원이 켜진 가상 머신의 가상 디스크 크기를 늘릴 수 있습니다.**  
+
+**필수 조건:**  
+- **연결된 스냅샷이 없어야 합니다.**  
+- **새로운 공간을 사용하기 위해 시스템 도구가 필요할 수 있습니다.**  
+
+**확장 후 작업: 
+가상 디스크 크기를 늘린 후에는 해당 디스크의 파일 시스템 크기도 늘려야 할 수 있습니다.  
+게스트 OS 내 적절한 도구를 사용하여 새로 할당된 디스크 공간을 활용하도록 파일 시스템을 구성하십시오.**  
+
+**주의 사항:**  
+- **Windows: 디스크 관리 도구에서 파티션 확장**  
+- **Linux: `resize2fs` 또는 `xfs_growfs` 명령어 사용**  
+- **확장 작업 전 반드시 VM 백업 권장**
 
 ------
 
@@ -98,7 +145,7 @@ Dynamically Increasing Virtual Disk Size
 
 ## Inflating Thin-Provisioned Disks
 
-![image-20250307115233356](/assets/cisco_post_img/2025-03-07-Module 7-3 Lesson 3 Modifying Virtual Machines //image-20250307115233356.png)
+<img src="../../../assets/cisco_post_img/2025-03-07-Module 7-3 Lesson 3 Modifying Virtual Machines //image-20250403151520618.png" alt="image-20250403151520618" style="zoom: 67%;" />
 
 **Thin-Provisioned 디스크를 Thick-Provisioned로 변환 (Inflating)**
 
@@ -164,7 +211,7 @@ thick 방식을 thin 방식으로 변환은 불가능하다.
 
 **VM Options - General Settings**
 
- ![image-20250307115859115](/assets/cisco_post_img/2025-03-07-Module 7-3 Lesson 3 Modifying Virtual Machines //image-20250307115859115.png)
+<img src="../../../assets/cisco_post_img/2025-03-07-Module 7-3 Lesson 3 Modifying Virtual Machines //image-20250403151549941.png" alt="image-20250403151549941" style="zoom:50%;" />
 
 VMware vSphere에서 **VM Options** 탭을 통해 가상 머신(VM)의 속성을 수정할 수 있다. **General Options**에서는 다음과 같은 항목을 확인 및 수정할 수 있다.
 
@@ -258,7 +305,7 @@ VMware vSphere에서 **VM Options** 탭을 통해 가상 머신(VM)의 속성을
 
 ## VM Options: VM Boot Settings
 
-![image-20250307120022911](/assets/cisco_post_img/2025-03-07-Module 7-3 Lesson 3 Modifying Virtual Machines //image-20250307120022911.png)
+<img src="../../../assets/cisco_post_img/2025-03-07-Module 7-3 Lesson 3 Modifying Virtual Machines //image-20250403151636244.png" alt="image-20250403151636244" style="zoom:50%;" />
 
 **VM Options - VMware Tools 설정**
 

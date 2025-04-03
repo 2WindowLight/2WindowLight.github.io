@@ -224,6 +224,27 @@ NSX는 데이터 센터 및 클라우드 환경에서 **소프트웨어 정의 �
 
 ------
 
+### 순서 요약 정리
+
+1. nsx management 배포
+2. host preparation
+3. edge cluster 배포
+4. segment
+5. gateway( t - 0, t - 1)
+   * sr 사용 유무
+   * single tier vs. multi tier
+   * 라우팅 구성
+6. 패킷 filtering (DFW, GFW)
+7. 네트워크 서비스
+   * nat
+   * sbl -> nsx alb
+   * dhcp
+   * dns forwarder
+
+
+
+------
+
 
 
 **결론**

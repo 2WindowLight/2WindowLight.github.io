@@ -90,7 +90,9 @@ tags: [Network, Cloud,vShphere]
 
 ------
 
-## 가상 환경
+------
+
+##           s가상 환경
 
 ![image-20250227113630549](/assets/cisco_post_img/2025-02-27- vSphere and Virtualization Overview//image-20250227113630549.png)
 
@@ -151,6 +153,8 @@ tags: [Network, Cloud,vShphere]
 
 ------
 
+------
+
 ## About Virtual Machines(가상 머신)
 
 ![image-20250227120008637](/assets/cisco_post_img/2025-02-27- vSphere and Virtualization Overview//image-20250227120008637.png)
@@ -183,6 +187,8 @@ tags: [Network, Cloud,vShphere]
 
 
 이 그림은 **가상 머신의 개념과 주요 구성 요소를 시각적으로 나타낸 것**이다.
+
+------
 
 ------
 
@@ -360,6 +366,8 @@ tags: [Network, Cloud,vShphere]
 
 vSphere는 **SDDC의 핵심 기반 기술**로 활용된다.
 
+------
+
 **1. SDDC의 주요 구성 요소**
 
 
@@ -374,6 +382,8 @@ vSphere는 **SDDC의 핵심 기반 기술**로 활용된다.
 
 
 
+------
+
 **② 가상 인프라 계층(Virtual Infrastructure Layer)**
 
 ​	•	**VMware vSphere**: 서버 가상화 핵심 플랫폼
@@ -383,6 +393,8 @@ vSphere는 **SDDC의 핵심 기반 기술**로 활용된다.
 ​	•	**VMware NSX**: 네트워크 가상화 및 보안
 
 
+
+------
 
 **③ 클라우드 관리 계층(Cloud Management Layer)**
 
@@ -394,6 +406,8 @@ vSphere는 **SDDC의 핵심 기반 기술**로 활용된다.
 
 
 
+------
+
 **④ 서비스 관리 및 자동화(Service Management and Automation)**
 
 ​	•	**VMware Aria Operations**: 성능 모니터링 및 운영 최적화
@@ -404,6 +418,8 @@ vSphere는 **SDDC의 핵심 기반 기술**로 활용된다.
 
 
 
+------
+
 **⑤ 비즈니스 연속성(Business Continuity)**
 
 ​	•	**Site Recovery Manager**: 재해 복구 솔루션
@@ -412,11 +428,15 @@ vSphere는 **SDDC의 핵심 기반 기술**로 활용된다.
 
 
 
+------
+
 **⑥ 보안(Security)**
 
 ​	•	**NSX Microsegmentation**: 네트워크 마이크로 세분화 보안
 
 ​	•	**Carbon Black**: 엔드포인트 보안 및 위협 탐지
+
+------
 
 **2. 핵심 개념 요약**
 
@@ -427,6 +447,8 @@ vSphere는 **SDDC의 핵심 기반 기술**로 활용된다.
 ✅ **vSphere, vSAN, NSX 등의 VMware 솔루션이 핵심 기술로 사용됨**
 
 ✅ **자동화된 운영, 보안 강화, 비즈니스 연속성 확보가 가능하여 차세대 데이터 센터 구축에 필수적**
+
+------
 
 ------
 
@@ -487,6 +509,8 @@ vSphere는 **SDDC의 핵심 기반 기술**로 활용된다.
 
 
 ✅ **vSphere+를 활용하면 온프레미스 환경을 클라우드와 연계하여 관리 효율성과 확장성을 극대화할 수 있다.**
+
+------
 
 ------
 

@@ -15,19 +15,11 @@ tags: [Network, Cloud, vShphere]
 
 ------
 
-
-
-![image-20250307120250477](/assets/cisco_post_img/2025-03-07-Module 7-4 Lesson 4 Creating Templates and Cloning VMs //image-20250307120250477.png)
-
-
-
-------
-
 ------
 
 ## **VM 템플릿 (Template) 개요**
 
-![image-20250307120457343](/assets/cisco_post_img/2025-03-07-Module 7-4 Lesson 4 Creating Templates and Cloning VMs //image-20250307120457343.png)
+<img src="../../../assets/cisco_post_img/2025-03-07-Module 7-4 Lesson 4 Creating Templates and Cloning VMs //image-20250403151817008.png" alt="image-20250403151817008" style="zoom:67%;" />
 
 VM 템플릿은 **가상 머신(VM)의 정적인 이미지**로, 새로운 VM을 빠르고 일관되게 배포하는 데 사용된다.
 
@@ -123,7 +115,7 @@ VM 템플릿을 사용하면 **표준화된 환경을 유지하면서 가상 머
 
 ## **VM을 템플릿으로 클론 (Clone to Template)**
 
-![image-20250307120553745](/assets/cisco_post_img/2025-03-07-Module 7-4 Lesson 4 Creating Templates and Cloning VMs //image-20250307120553745.png)
+<img src="../../../assets/cisco_post_img/2025-03-07-Module 7-4 Lesson 4 Creating Templates and Cloning VMs //image-20250403152058147.png" alt="image-20250403152058147" style="zoom:50%;" />
 
 VM을 템플릿으로 변환하는 방법 중 하나는 **“Clone to Template”** 기능을 이용하는 것이다.
 
@@ -204,7 +196,7 @@ VM을 템플릿으로 변환하는 방법 중 하나는 **“Clone to Template�
 
 ## **템플릿 업데이트 (Updating Templates)**
 
-![image-20250307120821590](/assets/cisco_post_img/2025-03-07-Module 7-4 Lesson 4 Creating Templates and Cloning VMs //image-20250307120821590.png)
+<img src="../../../assets/cisco_post_img/2025-03-07-Module 7-4 Lesson 4 Creating Templates and Cloning VMs //image-20250403152143468.png" alt="image-20250403152143468" style="zoom:50%;" />
 
 템플릿을 최신 상태로 유지하려면 **템플릿을 VM으로 변환하여 수정한 후 다시 템플릿으로 변환**하면 된다.
 
@@ -274,13 +266,13 @@ VM을 템플릿으로 변환하는 방법 중 하나는 **“Clone to Template�
 
 ## Deploying VMs from a Template
 
-![image-20250307121014590](/assets/cisco_post_img/2025-03-07-Module 7-4 Lesson 4 Creating Templates and Cloning VMs //image-20250307121014590.png)
+![image-20250403152154788](../../../assets/cisco_post_img/2025-03-07-Module 7-4 Lesson 4 Creating Templates and Cloning VMs //image-20250403152154788.png)
 
 ------
 
 ## **VM 복제 (Cloning Virtual Machines)**
 
-![image-20250307121033390](/assets/cisco_post_img/2025-03-07-Module 7-4 Lesson 4 Creating Templates and Cloning VMs //image-20250307121033390.png)
+![image-20250403152207868](../../../assets/cisco_post_img/2025-03-07-Module 7-4 Lesson 4 Creating Templates and Cloning VMs //image-20250403152207868.png)
 
 VM을 클론하면 원본 VM과 **완전히 동일한 사본**을 생성할 수 있다.
 
@@ -348,7 +340,7 @@ VM을 빠르게 여러 개 배포하려면 **템플릿을 사용하는 것이 �
 
 ## **VM 맞춤 설정 사양 (Customization Specifications)**
 
-![image-20250307121225289](/assets/cisco_post_img/2025-03-07-Module 7-4 Lesson 4 Creating Templates and Cloning VMs //image-20250307121225289.png)
+![image-20250403152242190](../../../assets/cisco_post_img/2025-03-07-Module 7-4 Lesson 4 Creating Templates and Cloning VMs //image-20250403152242190.png)
 
 VM 맞춤 설정 사양(Customization Specifications)은 **게스트 운영 체제(Guest OS)를 구성하는 표준화된 방법**을 제공한다.
 
@@ -386,4 +378,4 @@ VM 맞춤 설정 사양(Customization Specifications)은 **게스트 운영 체�
 
 ## Customizing the Guest Operating System
 
-![image-20250307121302966](/assets/cisco_post_img/2025-03-07-Module 7-4 Lesson 4 Creating Templates and Cloning VMs //image-20250307121302966.png)
+![image-20250403152252696](../../../assets/cisco_post_img/2025-03-07-Module 7-4 Lesson 4 Creating Templates and Cloning VMs //image-20250403152252696.png)
