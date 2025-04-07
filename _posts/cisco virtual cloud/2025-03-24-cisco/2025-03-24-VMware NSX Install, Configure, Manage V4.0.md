@@ -2,7 +2,7 @@
 title: <h0>VMware NSX Install, Configure, Manage V4.0</h0>
 author: cotes 
 categories: [cisco virtual cloud,2025-03-24-cisco]
-tags: [Network, Cloud, NSX]
+tags: [Network, Cloud,Install Configure Manage[V4.0]]
 
  
 
@@ -142,6 +142,12 @@ Transport Zone 구성, IP Pool 생성, ESXi 호스트를 NSX 용도로 준비하
 ## **Lab 5: NSX 세그먼트(Segments) 구성**
 
 ![image-20250324174022720](../../../assets/cisco_post_img/2025-03-24-VMware NSX Install, Configure, Manage V4.0//image-20250324174022720.png)
+
+**주요 작업 내용:**
+
+- **네트워크 가상화를 위한 전송 영역 설정**
+- **가상 머신 및 서비스에 할당할 IP 주소 풀 생성**
+- **NSX 설치 전 ESXi 호스트 사전 구성**
 
 ### **Task 1: 세그먼트 생성 (L2 네트워크 구성)**
 
@@ -384,3 +390,6 @@ ping -c 3 172.16.30.11  # sa-db-01
 | Topology 연결 확인 | 정상              |
 | Ping 테스트        | 성공              |
 
+
+
+![IMG_0628](../../../assets/cisco_post_img/2025-03-24-VMware NSX Install, Configure, Manage V4.0/IMG_0628.png)

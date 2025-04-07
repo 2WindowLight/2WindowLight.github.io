@@ -422,7 +422,7 @@ NSX에서 트랜스포트 존은 Overlay Transport Zone과 VLAN Transport Zone�
 1. **트랜스포트 노드의 스위치 유형**
 
    * **ESXi 트랜스포트 노드**
-     * **VDS(Virtual Distributed Switch)만 사용 가능**.
+     * **VDS(Sphere Distributed Switch)만 사용 가능**.
      * NSX 4.0.0.1부터 **N-VDS 지원이 중단됨** → 기존 환경에서는 **VDS로 마이그레이션 필요**.
 
    * **NSX Edge 및 베어메탈 노드**
