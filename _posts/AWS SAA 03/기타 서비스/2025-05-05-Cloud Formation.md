@@ -10,11 +10,11 @@ tags: [AWS]
 
 ---
 
-클라우드 포메이션(CloudFormation)은 **AWS 인프라를 코드 형태로 정의하고 관리하는 AWS 서비스입니다.** 
+### 클라우드 포메이션(CloudFormation)은 **사용자가 자동화되고 안전한 방식으로 인프라 리소스를 모델링하고 관리할 수 있도록 하는 Amazon Web Services (AWS)에서 제공하는 서비스**
 
 ------
 
-
+**인프라를 코드로 관리하는 (IaC) 개념을 바탕으로, 템플릿 파일을 사용하여 원하는 AWS 리소스를 정의하고, CloudFormation이 이를 분석하여 해당 리소스를 생성 및 구성해 줍니다**
 
 - **코드형 인프라 (Infrastructure as Code):**
 

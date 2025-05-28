@@ -5,12 +5,6 @@ categories: [AWS SSA 03,머신ㄹ닝]
 tags: [AWS]
 
 
-
-
-
-
-
-
 ---
 
 ####  Amazon Rekognition은 

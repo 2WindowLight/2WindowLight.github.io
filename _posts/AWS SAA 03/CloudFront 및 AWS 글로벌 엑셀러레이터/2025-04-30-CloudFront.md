@@ -31,6 +31,16 @@ tags: [AWS]
 - **Ingress 기능**: CloudFront를 통해 S3 버킷에 데이터 업로드 가능.
 - **동적 콘텐츠 지원**: Lambda@Edge로 엣지에서 코드 실행.
 
+------
+
+## CloudFront 오리진
+
+**cloudfront 가 오리진으로 보내는 요청에 포함된 값(url 쿼리,HTTP 헤더,쿠키)를 제어.**
+
+**또한 오리진에서 추가 정보를 수집하거나 오리진 응답을 사용자 정의하는 데 사용**
+
+------
+
 #### **CloudFront vs S3 교차 리전 복제(CRR)**
 
 | **구분**      | **CloudFront**                    | **S3 CRR**                                   |
